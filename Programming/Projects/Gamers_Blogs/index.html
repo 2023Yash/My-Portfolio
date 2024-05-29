@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer's Hub</title>
+  <script src="app.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="utilities.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- Aside -->
+  <aside class="p7">
+    <h1 style="padding: 5px;">G<br>A<br>M<br>E<br>R<br>'<br>S<br> <br>H<br>U<br>B</h1>
+  </aside>
+
+  <!-- form -->
+
+  <!-- <div id="blocker"></div>
+
+  <div id="log-in" style="display: block;">
+    <form action="form.js">
+      <div style="margin: 20px;">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Email</b></label>
+        <input type="Email" placeholder="Enter Email" name="Email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="myInput"><br><br>
+        <label><input type="checkbox" onclick="pws()">Show Password</label>
+
+        <button type="submit" class="btn-def" style="width: 100%;margin-bottom: 10px;">Login</button>
+        <label class="p7">
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div>
+        <button class="btn-def" type="button"
+          onclick="document.getElementById('log-in').style.display='none';document.getElementById('blocker').style.display='none';">Cancel</button>
+        <span>Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div> -->
+
+  <div id="main-content">
+    <!-- header -->
+    <header>
+      <!-- links -->
+      <nav class="center">
+        <h1 class="logo p5">GAMER'S HUB</h1>
+        <a href="#home" class="stylish">Home</a>
+        <a href="#about" class="stylish">About Us</a>
+        <a href="#news" class="stylish">Gaming News</a>
+        <a href="#downloads" class="stylish">Downloads</a>
+        <button id="responsiveFunctiontwo" onclick="responsiveFunctionTwo()" class="fa fa-bars"
+          style="color: black;"></button>
+      </nav>
+      <!-- others -->
+      <nav id="btn" class="p7">
+        <a onclick="document.getElementById('log-in').style.display='block';document.getElementById('blocker').style.display='block';"
+          class="btn-def">Log in</a>
+        <a class="p7 btn-def" href="#"><i class="fa">&#xf002;</i> Search</a>
+      </nav>
+    </header>
+
+    <!-- main content -->
+
+    <div id="main-main-content">
+      <main id="home">
+        <div>
+          <h1>
+            <span style="font-family: 'Honk', system-ui;" class="display-3">GG Gamerz</span><br>
+            <span class="display-4 stylish-opposit">Welcome to<br>
+              <span class="logo">GAMER'S HUB</span></span>
+            <br><span><mark style="font-family: 'Workbench', sans-serif; color: black;" class="display-4">The Gamer heven</mark></span>
+            <br><br><button class="btn-def" onclick="Close()">Get Started</button>
+          </h1>
+        </div>
+        <div id="main-img">
+          <img src="Games.png" alt="Games Image">
+        </div>
+      </main>
+      <section id="about" class="text-center">
+<pre>
+<h1 class="p1">About Us</h1><br>
+<p>
+Gaming Hub stands as the ultimate haven for passionate gamers, offering a dynamic platform that caters to the
+insatiable thirst for the latest gaming news and updates. With a sleek interface and user-friendly design,
+Gaming Hub delivers a comprehensive array of information on the newest releases, trends, and developments in
+the gaming universe. From riveting reviews to in-depth analyses, Gaming Hub ensures that gamers are always in
+the loop, equipped with the knowledge they need to make informed decisions about their gaming pursuits.
+Whether it's uncovering the mechanics of highly anticipated titles or exploring the innovative realms of indie
+gems, Gaming Hub serves as a beacon of enlightenment in the vast sea of gaming media. With a team of dedicated
+experts at the helm, Gaming Hub prides itself on delivering content that resonates with gamers of all stripes,
+fostering a vibrant community bound by a shared passion for gaming excellence. Whether you're a seasoned
+veteran or a budding enthusiast, Gaming Hub is your definitive destination for staying ahead of the curve in
+the ever-evolving world of gaming.
+</p>
+</pre>
+      </section>
+      <section id="news">
+        <h1 class="p1">Gaming News</h1>
+        <div id="flip-cards">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Minecraft.jpeg" alt="Minecraft">
+                <div class="name p6">Mincraft</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p4">Mincraft</h1>
+                  <h2 class="p5">About Vault</h2><br>
+                  <blockquote>
+                    <p>The Vault is a new block coming to Minecraft that requires a key to open. It contains loot like
+                      chests, but unlike chests, Vaults can be looted by unlimited players and even respawn loot for
+                      future players. This means players can always find new Vaults to explore, even on servers where
+                      other structures have been looted.</p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="GTA 6.jpeg" alt="GTA 6">
+                <div class="name p6">GTA VI</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p4"><abbr title="Grand Theft Auto">GTA VI</abbr></h1>
+                  <h2 class="p5">About <abbr title="Grand Theft Auto">GTA VI</abbr></h2><br>
+                  <blockquote>
+                    <p>
+                      GTA VI takes us to Vice City (think Miami vibes) in the fictional state of Leonida (Florida). Follow
+                      Lucia and her partner in crime through sun-drenched streets and chaotic action. Crime, social media
+                      satire, and influencer culture take center stage. Expect over-the-top heists, fast cars, and classic
+                      GTA mayhem – all coming 2025 to PS5 and Xbox Series X/S.</p>
+                    </div>
+                  </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="NFSMW 2024.jpg" alt="NFSMW 2024">
+                <div class="name p6">NFS Most Wanted<br>2024 Remake</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p5"><abbr title="Need for Speed Most Wanted">NFSMW</abbr> 2024</h1>
+                  <h2 class="p6">2024 <abbr title="Need for Speed Most Wanted">NFSMW</abbr> Remake?</h2><br>
+                  <blockquote>
+                    <p>
+                      Speculation suggests the next Need for Speed, possibly arriving in 2025, could take place in the US,
+                      Japan, or Seattle. Fans hope for improved police chases and a return to combined single-player and
+                      multiplayer experiences. While this doesn't reveal the source.</p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="call of duty modern.jpg" alt="call of duty">
+                <div class="name p6">Call Of Duty<br>Modern Warfare III</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p7">Call Of Duty<br>Modern Warfare III</h1>
+                  <h2 class="p6">Latests updates</h2><br>
+                  <blockquote>
+                    <p>
+                      Call of Duty Modern Warfare III's Season 1 patch brought a "Supe Siege" mode inspired by The Boys TV
+                      show, with temporary power-ups for collecting "Temp V." Challenges, progression bugs, and
+                      weapon/attachment unlock issues were fixed. Mastery Emblems and missing camo challenges were added.
+                      Expect more content in future live seasons</p>
+                    </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Prince_of_Persia_The_Lost_Crown_cover_art.jpg" alt="Prince of Persia The Lost Crown">
+                <div class="name p6">Prince of Persia<br>The Lost Crown</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p6">Prince of Persia The Lost Crown</h1>
+                  <h2 class="p6">New patches</h2><br>
+                  <blockquote>
+                    <p>
+                      Prince of Persia: The Lost Crown received its final update, Patch 1.0.1, on January 23rd, 2024. It
+                      balanced boss and enemy fights, improved the Guided Mode experience, tweaked audio mixing, polished
+                      UI elements, and fixed general bugs. No further updates are expected.</p>
+                    </div>
+                  </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Unreal engine.png" alt="Unreal">
+                <div class="name p6">Unreal Engine</div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h1 class="p6">Unreal Engine</h1>
+                  <h2 class="p6">Super realestic grapics</h2><br>
+                  <blockquote>
+                    <p>
+                      Nanite shines brighter: Handles masked materials smoother, displays wider surface types.Lumen beams
+                      wider: Multiple reflection bounces, faster console performance.Cloth gets clever: Panel-based
+                      editor, ML simulation, skin weight transfer for smoother drapes.Plus: VSM, TSR, Hair Grooms, Path
+                      Tracing, Substrate enhancements.</p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="downloads">
+        <h1 class="p3">Today's FREE Downloads & Offers</h1>
+        <ul>
+          <li><span class="p6">Xbox game pass<span class="badge">50% off</span></span><span><i
+                class="fa fa-download"></i>Download</span></li>
+          <li><span class="p6">Minecraft PE<span class="badge">FREE</span></span><span><i
+                class="fa fa-download"></i>Download</span></li>
+          <li><span class="p6">Bully 2<span class="badge">80% off</span></span><span><i
+                class="fa fa-download"></i>Download</span></li>
+          <li><span class="p6">Discord<span class="badge">Sponser</span></span><span><i
+                class="fa fa-download"></i>Download</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+      <div style="margin-right: 75px;">
+        <h1 class="p4">GAMER'S HUB</h1>
+        <p class="p7">GAMER'S HUB is a website to learn about Gaming, download Games and be up to date on
+          gaming.</p>
+      </div>
+      <div>
+        <h3 class="p3">Support</h3>
+        <div style="margin-top: 15px; font-size: 25px;">
+          <a href="#">Feedback</a>
+        </div>
+        <div style="font-size: 25px;">
+          <a href="#">Report</a>
+        </div>
+        <div style="font-size: 25px;">
+          <a href="#">Give us News</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="p5">Let's connect together</h3>
+        <p class="p6">Follow us and get the latest news</p>
+        <ul class="p7">
+          <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official"
+                style="background-color: white;color: rgb(38, 0, 255);line-height: 0.8;font-size: 25px;"></i>
+              Facebook</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"
+                style="font-size: 25px; color: rgb(255, 0, 225);"></i> Instagram</a></li>
+          <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fa fa-twitter"
+                style="font-size: 25px; color: rgb(0, 106, 255);"></i> Twitter</a></li>
+          <li><a href="https://www.reddit.com/?rdt=42325" target="_blank"><i class="fa fa-reddit-alien"
+                style="font-size: 25px; color: rgb(255, 89, 59);"></i> Reddit</a><span class="badge">New</span></li>
+        </ul>
+      </div>
+    </footer>
+    <p class="p7" style="background-color: rgb(255, 255, 143);color: black;padding: 5px;">
+      Copyright © <span id="year" style="color: black;"></span> | GAMER'S HUB
+    </p>
+  </div>
+
+</body>
+
+</html>

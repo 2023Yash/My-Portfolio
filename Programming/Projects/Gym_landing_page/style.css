@@ -1,0 +1,646 @@
+/* Redo page settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: default;
+}
+
+body {
+    padding: 0 100px;
+}
+
+section {
+    padding: 0;
+}
+
+#Width_Error {
+    display: none;
+}
+
+#Width_Error h5 {
+    color: white;
+    font-family: monospace;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 250px) {
+    #Main-Content {
+        display: none;
+    }
+
+    #Width_Error {
+        display: block;
+    }
+
+    body {
+        background-image: linear-gradient(270deg, #ff9b9b 0%, #ffaea4 15%, #ff7474 25%, #ff4646 75%, #ff2c2c 90%);
+        background-repeat: no-repeat;
+    }
+}
+
+/***** Redo page settings *****/
+
+/* Navbar */
+
+#navbar {
+    padding: 5px 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#navtext {
+    display: inline;
+}
+
+#navtext h1 {
+    display: inline;
+    color: tomato;
+    margin-left: 10px;
+}
+
+.Mainlinks {
+    display: inline;
+    float: right;
+    margin-top: 5px;
+}
+
+.Mainlinks button {
+    margin-right: 10px;
+    color: black;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.Mainlinks button:hover {
+    text-decoration: underline;
+}
+
+.joinus {
+    background-color: tomato !important;
+    border-radius: 4px;
+    padding: 4px;
+    color: white !important;
+}
+
+hr {
+    padding-bottom: 4px;
+    background-color: grey;
+}
+
+@media only screen and (max-width: 740px) {
+    body {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    #Mainlinks h1,
+    button {
+        display: block;
+        text-align: center;
+    }
+
+    #Mainlinks {
+        display: block;
+    }
+
+    hr {
+        margin-top: 55px;
+    }
+
+    body {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    body {
+        padding: 0 20px;
+    }
+}
+
+/***** Navbar *****/
+
+/* Footer */
+
+.content {
+    min-height: calc(100vh - 70px);
+}
+
+#footer {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: tomato;
+    color: white;
+    font-family: 'ubuntu';
+    width: 100%;
+    height: auto;
+    font-size: 17px;
+}
+
+#footer p {
+    margin-right: 5px;
+}
+
+#follow-us {
+    font-size: 24px;
+}
+
+#facebook:hover {
+    color: rgb(60, 60, 189);
+    cursor: pointer;
+}
+
+#instagram:hover {
+    background-image: linear-gradient(45deg, #ffd900 0%, #eb8d35 15%, #ff3535 25%, #8d3d94 75%, #0004ff 90%);
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+#reddit:hover {
+    color: rgb(255, 162, 125);
+    cursor: pointer;
+}
+
+.fa {
+    margin-right: 6px;
+}
+
+@media only screen and (max-width: 501px) {
+    #footer p {
+        font-size: 12px;
+    }
+
+    #follow-us {
+        font-size: 17px;
+    }
+}
+
+/***** Footer *****/
+
+/* SPA */
+
+#about {
+    display: none;
+}
+
+#joinus {
+    display: none;
+}
+
+#contact {
+    display: none;
+}
+
+/***** SPA *****/
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/* Home */
+
+#home {
+    display: flex;
+    justify-content: center;
+}
+
+#image {
+    width: 50%;
+}
+
+#image img {
+    width: 100%;
+}
+
+#whole-mainmessage {
+    display: flex;
+}
+
+#mainmessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: cursive;
+    width: 50%;
+}
+
+#logo-image {
+    width: 200px;
+}
+
+#main-message-btn {
+    font-size: 16px;
+    padding: 6px;
+}
+
+.text-align {
+    text-align: center;
+}
+
+@media only screen and (max-width: 930px) {
+    .text-align {
+        font-size: 19px;
+    }
+
+    #main-message-btn {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 806px) {
+    #main-message-btn {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 707px) {
+    #image {
+        display: block;
+        width: 100%;
+    }
+
+    #whole-mainmessage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #image img {
+        display: block;
+        width: 100%;
+    }
+
+    #mainmessage {
+        width: 100%;
+    }
+
+    .text-align {
+        font-size: 17px;
+    }
+
+    #main-message-btn {
+        font-size: 12px;
+    }
+
+    #main-message-btn {
+        padding: 4px;
+    }
+
+    #hr {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #logo-image {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .text-align {
+        font-size: 15px;
+    }
+
+    .main-message-btn {
+        font-size: 10px;
+        padding: 4px;
+    }
+}
+
+/***** Home *****/
+
+/* About */
+
+#about {
+    font-family: cursive;
+}
+
+#About_Us {
+    display: flex;
+}
+
+#About_Us div {
+    width: 50%;
+    display: flex;
+}
+
+#Services_image {
+    width: 100%;
+}
+
+#about_Message {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    padding: 30px;
+}
+
+th,
+td {
+    border-bottom: 3px solid grey;
+}
+
+tr:hover {
+    background-color: #dddfff;
+}
+
+#th {
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    padding: 3px;
+    font-family: 'ubuntu', sans-serif;
+}
+
+#Table_div {
+    overflow-x: auto;
+}
+
+table {
+    margin-bottom: 40px;
+    width: 100%;
+    border-spacing: 0;
+    font-family: 'ubuntu', sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even):hover {
+    background-color: #dddfff;
+}
+
+#Pricing {
+    display: flex;
+    margin: 40px;
+}
+
+#Pricing h3 {
+    width: 33.3333333333333333%;
+    border: 2px solid grey;
+}
+
+#Pricing h3 span {
+    font-size: 1.625em;
+    font-weight: bolder;
+}
+
+.th_margin th {
+    padding-right: 1px;
+}
+
+.text-align-2 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1160px) {
+    #About_Us div {
+        width: 100%;
+    }
+
+    #About_Us div img {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    #About_Us {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .text-align-2 h3 {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .text-align-2 h3 {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    table tr,
+    table th {
+        font-size: 14px;
+    }
+
+    #Pricing {
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    #Pricing h3 {
+        width: 100%;
+    }
+
+    #Pricing {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #table {
+        overflow-x: auto;
+    }
+}
+
+/***** About *****/
+
+/* Contant */
+
+#call-image {
+    width: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#call-image img {
+    width: 100%;
+}
+
+#Main-Contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 58%;
+    height: 480.05px;
+    font-family: cursive;
+}
+
+#Main-Contact p,
+h1 {
+    margin-bottom: 7px;
+}
+
+#contact-button {
+    text-decoration: none;
+}
+
+#contact-button i {
+    display: none;
+}
+
+#contact-button:hover i {
+    display: inline;
+}
+
+#Or_call {
+    font-size: 23px;
+}
+
+@media only screen and (max-width: 1175px) {
+    #Main-Contact {
+        height: 376px;
+        width: 58%;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .text-align {
+        font-size: 19px;
+    }
+
+    #main-message-btn {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 806px) {
+    #main-message-btn {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 707px) {
+    #call-image {
+        display: block;
+        width: 80%;
+        margin: auto;
+    }
+
+    #contact {
+        display: flex;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Main-Contact img {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact-button {
+        font-size: 0.9em;
+    }
+}
+
+/***** Contant *****/
+
+/* Join */
+
+#joinus {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    flex-direction: column-reverse;
+}
+
+#form {
+    background-color: #fdfdfd;
+    border: 4px solid grey;
+    border-radius: 50px;
+    margin: 100px 0;
+}
+
+#form_div {
+    padding: 100px 5px;
+}
+
+#form_div input {
+    border-bottom: tomato 1px solid !important;
+    border: none;
+    background-color: #fdfdfd;
+    border-radius: 3px;
+}
+
+#submit {
+    border: none !important;
+    padding-bottom: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#submit:hover {
+    background-color: rgb(255, 85, 59) !important;
+}
+
+#message_Join {
+    margin-bottom: 70px;
+}
+
+#alert_div {
+    background-color: rgba(255, 96, 96, 0.76);
+    border-left: 4px solid red;
+}
+
+#alert_div_p {
+    margin-top: 50px;
+}
+
+#para_join {
+    margin: 0 100px;
+}
+
+@media only screen and (max-width: 575px) {
+    #form_div input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #para_join {
+        margin: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 407px) {
+    #fname_limitation {
+        display: block;
+    }
+
+    #para_join {
+        margin: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #para_join {
+        margin: 0 10px;
+    }
+}
+
+/***** Join *****/

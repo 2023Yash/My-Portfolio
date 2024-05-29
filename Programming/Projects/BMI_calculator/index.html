@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            height: 100svh;
+        }
+
+        ul li a {
+            font-size: 15px !important;
+        }
+    </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center flex-column">
+    <div id="container">
+        <h1>BMI Calculator</h1>
+        <label for="weight">Weight in KG:</label>
+        <input type="number" name="weight" id="weight" value="50">
+        <br>
+        <label for="height">Height in M:</label>
+        <input type="number" name="height" id="height" value="1.5">
+        <br>
+        <button class="btn btn-warning rounded" onclick="calculateBMI()">Get BMI</button>
+        <h1 id="output"></h1>
+    </div>
+    <div>
+        <nav aria-label="...">
+            <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link disabled" id="link1" href="#">Extremely Under Weight</a></li>
+                <li class="page-item"><a class="page-link disabled" id="link2" href="#">Under Weight</a></li>
+                <li class="page-item"><a class="page-link disabled" id="link3" href="#">Normal</a></li>
+                <li class="page-item"><a class="page-link disabled" id="link4" href="#">Over Weight</a></li>
+                <li class="page-item"><a class="page-link disabled" id="link5" href="#">Obese</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        let output = document.getElementById("output");
+
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let bmi = weight / (height * height);
+
+            if (isNaN(bmi) || bmi <= 0) {
+                output.textContent = "Invalid input";
+                disableLinks();
+                return;
+            }
+
+            output.textContent = `Your BMI is ${bmi.toFixed(2)}`;
+
+            if (bmi <= 16) {
+                output.textContent;
+                disableLinks(1);
+            } else if (bmi <= 18.5) {
+                output.textContent;
+                disableLinks(2);
+            } else if (bmi <= 24.9) {
+                output.textContent;
+                disableLinks(3);
+            } else if (bmi <= 29.9) {
+                output.textContent;
+                disableLinks(4);
+            } else {
+                output.textContent;
+                disableLinks(5);
+            }
+        }
+
+        function disableLinks(linkNumber) {
+            for (let i = 1; i <= 5; i++) {
+                let link = document.getElementById(`link${i}`);
+                if (i !== linkNumber) {
+                    link.classList.add("disabled");
+                    link.removeAttribute("href");
+                } else {
+                    link.classList.remove("disabled");
+                    link.setAttribute("href", "#");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

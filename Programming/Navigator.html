@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Navigator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            min-width: 0;
+            min-height: 0;
+            color: white;
+            cursor: default;
+        }
+
+        li::marker {
+            color: tomato;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        header nav {
+            background-color: rgb(61, 61, 61);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 10px;
+            margin: 2px 5px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+        }
+
+        header nav span {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav h1 {
+            display: inline;
+            color: tomato;
+        }
+
+        header nav div a:not(.Portfolio) {
+            margin-right: 15px;
+            background-color: rgb(125, 125, 125);
+            padding: 3px 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        header nav div a:hover:not(.Portfolio) {
+            background-color: rgb(92, 92, 92);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        header nav div a:active {
+            background-color: rgb(148, 148, 148);
+        }
+
+        .Portfolio {
+            background-image: linear-gradient(160deg, rgb(164, 255, 255), rgb(255, 100, 255), rgb(73, 73, 255));
+            padding: 3px 5px;
+            border-radius: 5px;
+            font-weight: bolder;
+            text-decoration: none;
+            border: 2px solid white;
+        }
+
+        .Portfolio:hover {
+            border: 2px solid rgb(255, 164, 250);
+            color: rgb(252, 228, 251);
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px 10px;
+            flex-wrap: wrap;
+            background-color: tomato;
+            color: white;
+            width: 100%;
+            height: auto;
+            font-size: 17px;
+        }
+
+        #iframeJS {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-image: linear-gradient(160deg, rgb(164, 255, 255), rgb(255, 100, 255), rgb(73, 73, 255));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-image: linear-gradient(160deg, rgb(73, 73, 255), rgb(255, 100, 255), rgb(164, 255, 255));
+        }
+
+        #Main-content {
+            display: flex;
+            min-height: calc(96.4vh - 70px);
+        }
+
+        #main {
+            margin: 100px 10% 10% 10%;
+        }
+
+        #blocker {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(128, 128, 128, 0.5);
+            display: none;
+            z-index: 1;
+        }
+
+        #nav {
+            display: none;
+            z-index: 4;
+            margin: 0;
+            padding: 0;
+            width: 75%;
+            height: 100vh;
+            background-color: rgb(48, 48, 48);
+            color: white;
+            position: fixed;
+            overflow: auto;
+            border: 3px solid white;
+        }
+
+        #nav a {
+            font-size: 135%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: white;
+        }
+
+        h2 {
+            font-size: xx-large;
+            margin: 10px;
+        }
+
+        article {
+            font-size: larger;
+            text-align: justify;
+        }
+
+        #responsiveFunctiontwo {
+            display: none;
+        }
+
+        section a:not(section p a) {
+            display: none;
+            border: 5px solid tomato;
+            padding: 4px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        section a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 800px) {
+            header nav div {
+                display: none;
+            }
+            
+            header nav div a {
+                display: block;
+                margin: 10PX 0 10px 0 !important;
+            }
+
+            header nav span {
+                width: 100%;
+            }
+
+            #responsiveFunctiontwo {
+                display: inline;
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <nav id="nav">
+        <h2>Projects<span id="responsive" onclick="responsiveFunction()" style="float: right;cursor: pointer;">X</span></h2>
+        <hr>
+        <a onclick="iFrameFunc('Projects/HTML_Project/Cubers_Guide.html', `<ul><li>Its my first project.</li><li>I didn${dont}t made other tabs.</li></ul>`, `Cubers Guide`)">Cubers Guide(HTML Project)</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Gym_landing_page/index.html', `<ul><li>Got the idea from <a href='${codeWithHarry}' target='_blank'>this video</a>.</li><li>If you own a gym, use this as a template for your website.</li></ul>`, `Gym landing page`)">Gym landing page</a>
+        <hr>
+        <a onclick="iFrameFunc(`${Portfolio}`, `<ul><li>This is my portfolio.</li><li>The link is ${Portfolio}</li></ul>`, 'My Portfolio')">My Portfolio</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Number_Couter/Number_Counter.html', '<ul><li>Its kind of useless but its my first JavaScript project.</li><li>I used ++ and -- operator and change the value.</li></ul>', `Number Counter`)">Number Counter</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Random_Number_Genrator/Random_Number_Genrater.html', '<ul><li>First useful project I made.</li><li>It genrate a random number from minimum and maxiumum value.</li></ul>', `Random Number Genrator`)">Random Number Genrator</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Random_Number_Guessing_Game/Random_Number_Guessing_Game.html', `<ul><li>It${dont}s a boring game.</li><li>If you get the number right first time your day will go very good.</li><li>Make sure that the number is between 1 to 10.</li></ul>`, `Random Number Guessing Game`)">Random Number Guessing Game</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Temprature_convertor/Temprature_Convertor.html', `<ul><li>If 0C° = 32F° then 0C° + 0C° = 1C° or 64F°</li><li>Don${dont}t think about this a lot or you will get methamatical nightmare.</li></ul>`, 'Temprature Converter')">Temprature Converter</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Dice_Roller/Dice_Roller.html', `<ul><li>I made this when I lost my dice while playing ludo.</li><li>Don${dont}t roll more than 40 dice.</li></ul>`, 'Dice Roller')">Dice Roller</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Password_Generater/Password_Generater.html', '<ul><li>It generates random 8 letters text.</li><li>Google also have it but after all, why not?</li><li>I just used the same function for genrating random text.</li></ul>', 'Password Genrator')">Password Genrator</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Ramanulan_machine_formula/Ramanujan_machine_formula.html', `<ul><li>I got the idea from <a href='${StnEdge}' target='_blank'>Student Edge</a> June 2021 edition page.no - 16.</li><li>This adds 1+2+3...<var>n</var>.</li><li>The formula is <code><var>n</var></code>*<var>n</var> / 2.</li></ul>`, 'Ramnujan Machine Formula')">Ramnujan Machine Formula</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Bulb/Bulb.html', `<ul><li>Turn the Bulb on or off.</li><li>I got the idea from <a href='${w3}' target='_blank'>W3Schools</a>.</li><li>I though why not make a singal button for it.</li></ul>`, 'Bulb 0/1')">Bulb 0/1</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/To-Do_list/To-Do_list.html', `<ul><li>It was a really hard project.</li><li>I didn't knew how to make local storage or else I would had made it even more complicated.</li></ul>`, `To-Do List`)">To-Do List</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/DAV/INDEX.html', `<ul><li>It was a project given by <a href=${codingal} target='_black'>Codingal.</a></li><li>My school website looks very bad.</li></ul>`, 'School Web Page')">School Web Page</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Gamers_Blogs/index.html', `<ul><li>It was also a project given by <a href=${codingal} target='_black'>Codingal.</a></li><li>It looks pretty good.</li><li>The hover effects are really cool.</li></ul>`, 'Gamers Hub')">Gamers Hub</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Touristo_dat_cam/index.html', `<ul><li>It was also a project given by <a href=${codingal} target='_black'>Codingal.</a></li><li>I know its bad.</li></ul>`, 'Touristo dat cam')">Touristo dat cam</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Height_comparison_tool/index.html', `<ul><li>It was the first project in which I used bootstrap.</li><li>I made it to compare my mama's(Uncles) height with my mami's(Auntie) height.</li></ul>`, 'Height comparison tool')">Height comparison tool</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Star_Prablam/index.html', `<ul><li>It is a problem from C++ I guese?</li><li>The project in which I bootstrap.</li></ul>`, 'Star Problem')">Star Problem</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/BMI_calculator/index.html', `<ul><li>It was also a project given by <a href=${codingal} target='_black'>Codingal.</a></li><li>I put Pagination in it because of Projects requirement</li></ul>`, 'BMI Calculator')">BMI Calculator</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/cubing_timer/index.html', `<ul><li>It's a timer for Rubik's Cube(If you don't know)</li><li>It's bad use <a target='blank' href='https://cstimer.net/'>csTimer</a> instead</li></ul>`, 'Cubing Timer')">Cubing Timer</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Rock_Paper_Scissor/index.html', ``, 'Rock Paper Scissor')">Rock Paper Scissor</a>
+        <hr>
+        <h2>Learning</h2>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Complete_HTML/learning.html', `<ul><li>I learned HTML from <a href='${w3}'>W3schools.</a></li><li>I use this page as a refrence sheet for HTML.</li></ul>`, 'HTML')">main HTML</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Complete_HTML/learning_2.html', `<ul><li>It is also a HTML project.</li><li>It is also based on <a href='${w3}'>W3schools</a> tutorial.</li></ul>`, 'css HTML')">css HTML</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Complete_HTML/learningJS.html', `<ul><li>It is also a HTML project.</li><li>It is also based on <a href='${w3}'>W3schools</a> tutorial.</li><li>The CSS and JS is copied.</li></ul>`, 'JS HTML')">JS HTML</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Complete_HTML/form.html', `<ul><li>It is also a HTML project.</li><li>It is also based on <a href='${w3}'>W3schools</a> tutorial.</li><li>It looks really bad.</li></ul>`, 'Form HTML')">Form HTML</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/Complete_CSS/CSS.html', `<ul><li>I learned CSS from <a href='${w3}'>W3schools.</a></li><li>It is also a Learning project.</li></ul>`, 'CSS')">CSS</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/CompleteJS/index.html', `<ul><li>You can view the other things in console.</li><li>Enter the password to continue.</li></ul>`, 'JS')">JS</a>
+        <hr>
+        <a onclick="iFrameFunc('Projects/CompleteJS/Advance.html', `<ul><li>You can view the other things in console.</li><li>Enter the password to continue.</li></ul>`, 'Advance JS')">Advance JS</a>
+        <hr>
+    </nav>
+
+    <div id="blocker"></div>
+
+    <div>
+
+        <!-- header -->
+
+        <header>
+            <nav id="topnav">
+                <span>
+                    <span>
+                        <h1>Project Navigator</h1>
+                        <a onclick="responsiveFunction()" class="Portfolio" style="margin-left: 10px;">Select project</a>
+                    </span>
+                    <a id="responsiveFunctiontwo" onclick="responsiveFunctionTwo()">☰</a>
+                </span>
+                <div id="topnavbtn">
+                    <a href="https://lidezb0mksw2kzundy7u1w.on.drv.tw/www.YashNaudiyal.in/" target="_blank">About Me</a>
+                    <a href="https://github.com/2023Yash/2023Yash" target="_blank">My Git Hub Page</a>
+                    <a class="Portfolio" href="https://lidezb0mksw2kzundy7u1w.on.drv.tw/www.YashNaudiyal.in/" target="_blank">My Portfolio</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+
+        <div id="Main-content">
+            <div id="main">
+                <main>
+                    <article>
+                        <h1>Project Navigator</h1>
+                        <p>I made many projects while learning Web Devolopmet.It was hard to access these project
+                            websites before this navigator was made.I made this website for making this easy.Use the
+                            side
+                            bar for accessing the project.The project you choosed will appear Below this paragraph.</p>
+                    </article>
+                </main>
+                <br><br><br><br>
+                <section>
+                    <h2 id="Heading"></h2>
+                    <p id="description" style="margin-left: 15px;"></p>
+                    <br>
+                    <a href="" target="_blank" id="another_page">Open in another page</a>
+                    <br><br><br>
+                    <div id="iframeJS"><iframe src="" title="project Iframe"></iframe></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <p>Project Navigator By Yash Naudiyal</p>
+        </footer>
+    </div>
+
+    <script>
+        let iFrameID = document.getElementById("iframeJS");
+        let Description = document.getElementById("description");
+        let Heading = document.getElementById("Heading");
+        let another_page = document.getElementById("another_page");
+        let dont = "'";
+        let StnEdge = "https://studentedge.in/user/downloads";
+        let codeWithHarry = "https://www.youtube.com/watch?v=hZjLA45S8G8&list=PLu0W_9lII9aiQiOwthuSvinxoflmhRxM3&index=11";
+        let w3 = "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_script_attribute";
+        let Portfolio = "https://lidezb0mksw2kzundy7u1w.on.drv.tw/www.YashNaudiyal.in/";
+        let codingal = "https://www.codingal.com/";
+
+        function iFrameFunc(Source, description, heading) {
+            iFrameID.innerHTML = `<iframe src=${Source} height="500px" width="100%" title="project Iframe"></iframe>`;
+            another_page.href = Source;
+            Description.innerHTML = description;
+            Heading.textContent = heading;
+            document.getElementById("nav").style.display = "none";
+            document.getElementById("blocker").style.display = "none";
+            document.getElementById("body").style.overflowY = "scroll";
+            document.getElementById("another_page").style.display = "inline";
+        }
+
+        function responsiveFunction() {
+            if (document.getElementById("nav").style.display == "none") {
+                document.getElementById("blocker").style.display = "block";
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("body").style.overflowY = "hidden";
+            } else {
+                document.getElementById("nav").style.display = "none";
+                document.getElementById("blocker").style.display = "none";
+                document.getElementById("body").style.overflowY = "scroll";
+            }
+        }
+
+        function responsiveFunctionTwo() {
+            if (document.getElementById("topnavbtn").style.display == "none") {
+                document.getElementById("topnavbtn").style.display = "block";
+                document.getElementById("topnav").style.display = "block";
+            } else {
+                document.getElementById("topnavbtn").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

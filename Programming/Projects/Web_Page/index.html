@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>New Tab</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-width: 0;
+            min-height: 0;
+            font-family: sans-serif;
+            text-decoration: none;
+            transition: all 300ms ease-out;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100dvh;
+            overflow: hidden;
+        }
+
+        .panel {
+            background-color: rgba(255, 255, 255, 0.26);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        aside {
+            height: 100vh;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+        aside div a img {
+            width: 50px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        aside div button {
+            background-color: rgba(104, 104, 104, 0.762);
+            padding: 2px;
+            position: absolute;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #add-to-fav,
+        #costomize {
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
+
+        #add-to-fav *,
+        #costomize * {
+            color: gray;
+        }
+
+        #add-to-fav div:not(#add-to-fav div div),
+        #costomize div:not(#costomize div div) {
+            margin: 50px;
+        }
+
+        #add-hot {
+            width: 50px;
+            height: 50px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .close-button {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            font-weight: bolder;
+            position: absolute;
+            border-radius: 50%;
+            font-size: 25px;
+            border: none;
+            height: 37px;
+            padding: 2px;
+            margin: 10px;
+            width: 37px;
+        }
+
+        #add-to-fav input,
+        #add-to-fav div button,
+        #costomize input,
+        #costomize div button {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border: 1px solid white;
+            border-radius: 3px;
+            background: none;
+            margin: 2px 0;
+            width: 100%;
+        }
+
+        #add-hot span {
+            color: gray;
+            font-size: 40px;
+        }
+
+        #costomize-button:hover {
+            background-color: rgba(255, 255, 255, 0.186);
+        }
+
+        #quick-links,
+        #costomize-button {
+            position: fixed;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            border-radius: 100vw;
+            border: none;
+        }
+
+        #quick-links {
+            padding: 10px 15px;
+            top: 0;
+        }
+
+        #quick-links img {
+            border-radius: 50%;
+            padding-left: 10px;
+        }
+
+        #costomize-button {
+            bottom: 0;
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        #costomize div button div {
+            display: inline-block;
+            width: calc(90% / 3);
+            height: 10px;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container div:has(div#search-bar) {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            width: calc(100% - 20vw);
+            height: calc(100% - 15vw);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <aside id="fav" class="display-panel">
+    </aside>
+
+    <div id="add-to-fav" class="display-panel">
+        <button onclick="this.parentElement.style.display = `none`" class="panel close-button">X</button>
+        <div>
+            <h1>Add New Hots Link</h1>
+            <label for="link">Link:</label><br>
+            <input type="text" name="link" id="link"><br>
+            <label for="image link">Image Link:</label><br>
+            <input type="text" name="image link" id="image-link"><br>
+            <button onclick="addHots()">Add</button>
+        </div>
+    </div>
+
+    <div id="costomize" class="display-panel">
+        <button onclick="this.parentElement.style.display = `none`" class="panel close-button">X</button>
+        <div>
+            <h1>Costomize</h1>
+            <label for="panel-color">Panel Color:</label>
+            <input type="color" name="panel-color" id="panel-color" style="width: 30px !important;"><br>
+            <label for="body-color">Body Color:</label>
+            <input type="color" name="body-color" id="body-color-1" style="width: 30px !important;">
+            <input type="color" name="body-color" id="body-color-2" style="width: 30px !important;"><br><br>
+            <div>
+                <h1>Themes</h1>
+                <button onclick="costomize('#ffffff', '#3bbacb', '#937eff')">
+                    <div style="background-color: #ffffff;"></div>
+                    <div style="background-color: rgb(59, 186, 203);"></div>
+                    <div style="background-color: rgb(147, 126, 255);"></div>
+                </button>
+                <button onclick="">
+                    <div style="background-color: #D9C4C4;"></div>
+                    <div style="background-color: #FFDBDB;"></div>
+                    <div style="background-color: #FFD4AB;"></div>
+                </button>
+                <button onclick="">
+                    <div style="background-color: #454545;"></div>
+                    <div style="background-color: #000000;"></div>
+                    <div style="background-color: #2c2c2c;"></div>
+                </button>
+            </div><br><br>
+            <button onclick="costomize(document.getElementById('panel-color').value, document.getElementById('body-color-1').value, document.getElementById('body-color-2').value)">Add</button>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="quick-links" class="panel">
+            <a href="https://myaccount.google.com/?hl=en&utm_source=OGB&utm_medium=act">Settings</a>
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"><img
+                    src="https://lh3.googleusercontent.com/ogw/AF2bZyjrMncB0bv5X7tPiIKj_OrHjmagTsFaL-Tgfccw7S5b8A=s32-c-mo"
+                    alt="display-picture"></a>
+        </div>
+
+        <div class="panel">
+            <img src="Search Buddy Logo.png" alt="Search Buddy Logo" style="width: 50%;">
+            <div id="search-bar">
+                <input type="text" placeholder="Search anything" id="search" />
+
+                <button onclick="googleSearch();" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <button class="panel" id="costomize-button" title="Costomize"
+            onclick="document.getElementById('costomize').style.display = 'block'"><i class="fa fa-pencil"></i></button>
+    </div>
+
+    <script>
+        function googleSearch() {
+            var text = document.getElementById("search").value;
+            if (text != "") {
+                var cleanQuery = text.replace(" ", "+", text);
+                var url = 'http://www.google.com/search?q=' + cleanQuery;
+
+                window.location.href = url;
+            }
+        }
+
+        document.getElementById('search').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                googleSearch();
+            }
+        });
+
+        //Costomization
+
+        if (localStorage.getItem("Panel") == null) {
+            localStorage.setItem("Panel", `#ffffff`)
+        }
+
+        if (localStorage.getItem("Body") == null || localStorage.getItem("Body1") == null || localStorage.getItem("Body2") == null) {
+            localStorage.setItem("Body", "linear-gradient(45deg, rgb(59, 186, 203), rgb(147, 126, 255))");
+            localStorage.setItem("Body1", "rgb(147, 126, 255)");
+            localStorage.setItem("Body2", "rgb(59, 186, 203)");
+        }
+
+        const elements = document.querySelectorAll('#body');
+
+        document.getElementById('body').style.background = localStorage.getItem("Body");
+        document.getElementById("fav").style.background = localStorage.getItem("Panel");
+        document.getElementById("costomize").style.background = localStorage.getItem("Panel");
+        document.getElementById("add-to-fav").style.background = localStorage.getItem("Panel");
+
+        document.getElementById('panel-color').value = localStorage.getItem("Panel");
+        document.getElementById('body-color-1').value = localStorage.getItem("Body1");
+        document.getElementById('body-color-2').value = localStorage.getItem("Body2");
+
+        function costomize(fs, sd, tr) {
+            localStorage.setItem("Panel", fs);
+            localStorage.setItem("Body1", sd);
+            localStorage.setItem("Body2", tr);
+            localStorage.setItem("Body", `linear-gradient(45deg, ${document.getElementById('body-color-1').value}, ${document.getElementById('body-color-2').value})`)
+
+            document.getElementById('body').style.background = localStorage.getItem("Body");
+            document.getElementById("fav").style.background = localStorage.getItem("Panel");
+            document.getElementById("costomize").style.background = localStorage.getItem("Panel");
+            document.getElementById("add-to-fav").style.background = localStorage.getItem("Panel");
+        }
+
+        // Adding and Deleting from fav tab
+
+        if (localStorage.getItem("hot-HTML") == null) {
+            localStorage.setItem("hot-HTML", `  <button id="add-hot" class="panel" onclick="document.getElementById('add-to-fav').style.display = 'block'"><span>+</span></button>
+                                                <div>
+                                                    <button onclick="this.parentElement.remove();editHots()">X</button>
+                                                    <a href="https://youtube.com">
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAwklEQVR4AWNwL/ChKx6GFo5a+J+BQRmIfYE4HYgrgLgLiOdA8VqsGCHfBdWTDjVDGaeFQElmIL4CxP+pjK/gsnA7SAGN8FpsFv6nJUaxECggSmsLQXYgW2hOlKbs7P//7ezItVAf2UJfojTNnv0fDNauJcdCX2QLo0iwEAHa2si2MJ1ECxHg1StIUBPWH0V3C+kepOQnmi1byE809M8W9M/49C/a6F940796wqyAo/BUvtuRMZ5KOApk1mibhmI8aiEAWJrZd6IgmiUAAAAASUVORK5CYII=" alt="youtube">
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <button onclick="this.parentElement.remove();editHots()">X</button>
+                                                    <a href="https://whatapp.com">
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAUVBMVEVHcEzz9PP3+Pfq7er19vb//v/8/PyltKrx+PKz5b1z04cwxlYMwUMAvCkAvjMAvzoDwUBGTUiH2JiY3aXX8Nxcznbo6ulJymfQ1NHJzcq9wr8gaKU6AAAAG3RSTlMAOlmJ2f//Lvj+/v///////xX+/v7+rP56aF7BK/qjAAABgklEQVR4AX2Sh5qEMAiEbYyJqXa993/QAza5z2v7b8UMMKDNN9qu77u2+Yd+oMLQ/3UMeoCfktHIVTs5791kRWvGb73BV6YQU2ZSDJPo28c5hzYk/0UKlghfipnzl+C/ERZWVMHA59H7nL8pVp6mUTqp7310Ln1TbESdCtgQJ0fO2J+KnNl4cbhGnx0b3aJ/EO1rkoPIZZ9WAuCeNhLnHGrRBJUDtH53YdQmyEaWL1Lh+yCSxEsoeQn4btJr27kZQYtclym279uSqqMI1lTntqpI6VlhVg9M9gArsg92Cal6mHlPdfx8Emg75S6YV9dNN3WAaskTsi0Zh6bEMUH2cLHLqvDsA4LsTjzeerNhqvscJpYwa5Q9gS0w/XODKbjF2jPK3PXJrIMWcooxiyGSAkKvHX+QHICPRhnYQ0mr5LADpYFuShunWIeJ2VI5Z25gM8TA7jFEfu9Whr2awoEKi8ymYmAYm4oBh8fHfA8vESRme5URxz0XN9cxMMelcYWDt3wCfLshX3540l4AAAAASUVORK5CYII=" alt="youtube">
+                                                    </a>
+                                                </div>`)
+        }
+
+        document.getElementById("fav").innerHTML += localStorage.getItem("hot-HTML");
+
+        function editHots() {
+            localStorage.setItem("hot-HTML", document.getElementById("fav").innerHTML);
+        }
+
+        function addHots() {
+            let link = document.getElementById("link");
+            let imageLink = document.getElementById("image-link");
+
+            document.getElementById("fav").innerHTML += `<div>
+                                                            <button onclick="this.parentElement.remove();editHots()">X</button>
+                                                            <a href="${link.value}">
+                                                                <img src="${imageLink.value}" alt="${link.value}">
+                                                            </a>
+                                                        </div>`;
+
+            link.textContent = null;
+            imageLink.textContent = null;
+
+            editHots();
+        }
+
+    </script>
+</body>
+
+</html>

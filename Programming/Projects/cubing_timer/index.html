@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubik's Cube Timer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      min-width: 0;
+      min-height: 0;
+      font-family: sans-serif;
+    }
+
+    #main-timer,
+    body {
+      min-height: 100dvh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #main-timer {
+      justify-content: space-around;
+    }
+
+    .timer {
+      font-size: 20vw;
+      display: block !important;
+    }
+
+    .timer {
+      font-family: monospace;
+      color: rgb(61, 61, 61);
+      line-height: 16vw;
+      border: 2vw solid currentColor;
+      border-radius: 8vw;
+      background-color: rgba(189, 255, 233, 0.476);
+    }
+
+    #scramble {
+      font-size: 20px;
+      text-align: center;
+      padding: 2vw;
+    }
+
+    div p {
+      font-size: 20px;
+    }
+
+    #output {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100dvb;
+      overflow-y: scroll;
+      justify-content: center;
+    }
+
+    #output * {
+      background-color: rgba(189, 255, 233, 0.476);
+      border: 3px solid rgb(61, 61, 61);
+      font-size: 25px;
+      margin: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+      cursor: pointer !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div onclick="startTimerToggleOnTouch()" style="width: 100%; height: 100dvh;" id="main-timer">
+    <div id="scramble"></div>
+    <div class="timer">00:00:00</div>
+    <div>
+      <p id="Ao5"></p>
+      <p id="Ao12"></p>
+      <p id="Best"></p>
+      <p id="Count"></p>
+    </div>
+  </div>
+
+  <div id="output" style="width: 100%;"></div>
+
+  <script>
+    let timerInterval;
+    let startTime;
+    let elapsedTime = 0;
+    let timerRunning = false;
+
+    if (localStorage.getItem("list") == null) {
+      localStorage.setItem("list", "");
+    }
+
+    document.getElementById("output").innerHTML = localStorage.getItem("list");
+
+    function generateRandomScramble() {
+      const moves = [
+        "U",
+        "U'",
+        "U2",
+        "D",
+        "D'",
+        "D2",
+        "L",
+        "L'",
+        "L2",
+        "R",
+        "R'",
+        "R2",
+        "F",
+        "F'",
+        "F2",
+        "B",
+        "B'",
+        "B2"
+      ];
+
+      let scramble = "";
+      let previousMove = "";
+
+      for (let i = 0; i < 21; i++) {
+        let randomIndex = Math.floor(Math.random() * moves.length);
+        let randomMove = moves[randomIndex];
+
+        while (randomMove[0] === previousMove[0]) {
+          randomIndex = Math.floor(Math.random() * moves.length);
+          randomMove = moves[randomIndex];
+        }
+
+        scramble += randomMove + " ";
+        previousMove = randomMove;
+      }
+
+      document.getElementById("scramble").textContent = scramble.trim();
+    }
+
+    generateRandomScramble();
+
+    function updateResult() {
+      localStorage.setItem("list", document.getElementById("output").innerHTML);
+
+      const outputElement = document.getElementById('output');
+      const results = [];
+
+      outputElement.childNodes.forEach(child => {
+        const textContent = child.textContent.trim();
+        const timeComponents = textContent.split(':');
+        const minutes = parseInt(timeComponents[0]);
+        const seconds = parseInt(timeComponents[1]);
+        const milliseconds = parseInt(timeComponents[2]);
+        const totalTime = (minutes * 60) + seconds + (milliseconds / 100);
+
+        results.push(totalTime);
+      });
+
+      const last5Solves = results.slice(-5);
+      const last12Solves = results.slice(-12);
+
+      const averageOf5 = last5Solves.reduce((acc, val) => acc + val, 0) / last5Solves.length;
+      const averageOf12 = last12Solves.reduce((acc, val) => acc + val, 0) / last12Solves.length;
+      const bestTime = Math.min(...results);
+      const solveCount = results.length;
+
+      if (solveCount >= 1) {
+        if (solveCount >= 5) {
+          document.getElementById("Ao5").innerHTML = `Average Of 5: ${formatTime(averageOf5)}`;
+        } else {
+          document.getElementById("Ao5").innerHTML = ``;
+        }
+        if (solveCount >= 12) {
+          document.getElementById("Ao12").innerHTML = `Average Of 12: ${formatTime(averageOf12)}`;
+        } else {
+          document.getElementById("Ao12").innerHTML = ``;
+        }
+        document.getElementById("Best").innerHTML = `Best: ${formatTime(bestTime)}`;
+        document.getElementById("Count").innerHTML = `Count: ${solveCount}`;
+      } else {
+        document.getElementById("Ao5").innerHTML = ``;
+        document.getElementById("Ao12").innerHTML = ``;
+        document.getElementById("Best").innerHTML = ``;
+        document.getElementById("Count").innerHTML = ``;
+      }
+    }
+
+    updateResult();
+
+    function formatTime(totalTimeInSeconds) {
+      const minutes = Math.floor(totalTimeInSeconds / 60);
+      const seconds = Math.floor(totalTimeInSeconds % 60);
+      const milliseconds = Math.floor((totalTimeInSeconds % 1) * 100);
+
+      return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}:${String(milliseconds).padStart(2, "0")}`;
+    }
+
+    function startTimer() {
+      if (!timerRunning) {
+        startTime = Date.now() - elapsedTime;
+        timerInterval = setInterval(updateTimer, 10);
+        timerRunning = true;
+      }
+    }
+
+    function stopTimer() {
+      if (timerRunning) {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        elapsedTime = Date.now() - startTime;
+        updateTimer();
+        timerInterval;
+        startTime;
+        elapsedTime = 0;
+        timerRunning = false;
+        document.getElementById("output").innerHTML += `<span onclick="this.remove();updateResult();">${document.querySelector(".timer").textContent}</span>`
+        updateResult();
+      }
+    }
+
+    function updateTimer() {
+      const elapsedTimeMillis = Date.now() - startTime;
+      const minutes = Math.floor(elapsedTimeMillis / (1000 * 60));
+      const seconds = Math.floor((elapsedTimeMillis % (1000 * 60)) / 1000);
+      const milliseconds = Math.floor((elapsedTimeMillis % 1000) / 10);
+
+      const formattedTime = `${String(minutes).padStart(2, "0")}:${String(
+        seconds
+      ).padStart(2, "0")}:${String(milliseconds).padStart(2, "0")}`;
+      document.querySelector(".timer").textContent = formattedTime;
+    }
+
+    function startTimerToggleOnTouch() {
+      if (!timerRunning) {
+        startTimer();
+      } else {
+        stopTimer();
+        generateRandomScramble();
+      }
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === " ") {
+        if (!timerRunning) {
+          startTimer();
+        } else {
+          stopTimer();
+          generateRandomScramble();
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number generator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(202, 255, 255, 0.475);
+        }
+
+        #maindiv {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #h1 {
+            font-family: fantasy;
+            font-size: 300%;
+            margin-bottom: 10px;
+        }
+
+        #input input {
+            font-size: 140%;
+            border: 3px solid tomato;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background-color: rgb(241, 248, 248);
+        }
+
+        #minmax {
+            font-size: 120%;
+            border: 2px solid tomato;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #minmax:hover {
+            background-color: rgb(123, 123, 123);
+            color: white;
+        }
+
+        #para {
+            font-size: 700%;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+        <h1 id="h1">Random Number Generator</h1>
+        <div id="input">
+            <input type="number" required id="min" placeholder="Enter minimum number">
+            <input type="number" required id="max" placeholder="Enter maximum number">
+        </div>
+        <button id="minmax">Submit</button>
+        <p id="para"> ‎</p>
+    </div>
+    
+    <script>
+        let min;
+        let max;
+        let minmax = document.getElementById('minmax');
+        let rn;
+        minmax.onclick = function minmax() {
+            min = document.getElementById("min").valueAsNumber;
+            max = document.getElementById("max").valueAsNumber;
+            rn = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("para").innerHTML = rn
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Form</title>
+
+    <style>
+        form {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <section class="form">
+            <form oninput="x.value=parseInt(a.value)+parseInt(b.value)"
+                action="https://www.w3schools.com/action_page.php" target="_blank" method="post" autocomplete="on"
+                novalidate>
+                <fieldset>
+                    <legend>Front end profile form</legend>
+                    Email ID:<input type="email" name="myemail" id="idem" required autofocus><br><br>
+                    Password:<input type="password" name="mypassword" id="myInput" required autofocus><br>
+                    <input type="checkbox" onclick="myFunction()">Show Password
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("myInput");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script><br><br>
+
+                    User name:<input type="text" name="myusername" id="idum"><br><br>
+
+                    Age: <input type="number" name="myage" id="myag" min="6" max="100" step="1" value="18"><br><br>
+
+                    <label for="appt">Select a time of reloading:</label>
+                    <input type="time" id="appt" name="appt"><br><br>
+
+                    <label for="phone">Enter a phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-45-678"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+
+                    Choose your favourite browser: <input list="browsers" name="browser">
+                    <datalist id="browsers">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist><br><br>
+
+                    <label for="vol">Profile Photo size (between 0 to 100):</label>
+                    <input type="range" id="vol" name="vol" min="0" max="100"><br><br>
+
+                    0
+                    <input type="range" id="a" name="a" value="50">
+                    100 +
+                    <input type="number" id="b" name="b" value="50">
+                    =
+                    <output name="x" for="a b"></output><br><br>
+
+                    Choose your profile color: <input type="color" name="mycolor" id="mycl"><br><br>
+
+                    Description:- <br><textarea name="medescription"
+                        style="width:300px; height:100px;">Description</textarea><br><br>
+
+                    From when you started leaning:<input type="date" name="mydate" id="idate" min="1979-12-31"
+                        max="2023-12-31"><br><br>
+
+                    <label for="bdaymonth">Till when you want to learn (month and year):</label>
+                    <input type="month" id="bdaymonth" name="bdaymonth"><br><br>
+
+                    <label for="birthdaytime">Birthday (date and time):</label>
+                    <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br><br>
+
+                    <label for="week">Select a week for break:</label>
+                    <input type="week" id="week" name="week"><br><br>
+
+                    <label for="mylb">Beginner:</label>
+                    <input type="radio" name="mylevel" id="mylb"><br>
+                    <label for="myli">Intermidiate:</label>
+                    <input type="radio" name="mylevel" id="myli"><br>
+                    <label for="myla">Advance:</label>
+                    <input type="radio" name="mylevel" id="myla"><br><br>
+
+                    I know HTML<input type="checkbox" name="mycheckbox" id="mych1" checked disabled><br>
+                    I know CSS<input type="checkbox" name="mycheckbox" id="mych2"><br>
+                    I know JavaScript<input type="checkbox" name="mycheckbox" id="mych3"><br><br>
+
+                    <label for="mybr">Choose your browser for websites:</label><br>
+                    <select id="mybr" name="mybrowser" size="3" multiple>
+                        <option value="goo">Google</option>
+                        <option value="ine">Internet Explorer</option>
+                        <option value="bin">Bing</option>
+                        <option value="ote">Others</option>
+                    </select><br><br>
+
+                    <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+
+                    <select name="myproggramingsoftware" id="myps">
+                        <option value="not">Notepad</option>
+                        <option value="vsc" selected>VSCode</option>
+                        <option value="oth">other</option>
+                    </select><br><br>
+
+                    <label for="myfile">Any projects done:</label>
+                    <input type="file" id="myfile" name="myfile"><br><br>
+
+                    <label for="gsearch">Search projects:</label>
+                    <input type="search" id="gsearch" name="gsearch"><br><br>
+
+                    <label for="homepage">Add your website URL (If published):</label>
+                    <input type="url" id="homepage" name="homepage" size="100" maxlength="100"><br><br>
+
+                    <input type="hidden" id="custId" name="custId" value="2023" readonly>
+
+                    <input type="image" src="https://www.w3schools.com/html/img_submit.gif" alt="Submit" width="48"
+                        height="48"><br><br>
+
+                    <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+
+                    <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+
+                    <input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+
+                    <input type="submit" formnovalidate="formnovalidate" value="Submit without validation">
+
+                    <input type="submit" formmethod="post" value="Submit using GET"><br><br>
+
+                    <input type="reset" value="Reset"><br><br>
+                    <button type="button" onclick="alert('This is your front end profile form')">Click to learn
+                        more</button>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

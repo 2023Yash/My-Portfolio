@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+
+main {
+    display: flex;
+    min-height: 850px;
+}
+
+main div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#main-img img {
+    border: 3px solid rgb(255 0 254);
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #main-img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .p1 {
+        font-size: 50px;
+    }
+}
+
+#news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flip-cards {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+    margin: 100px 0;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 415px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner img {
+    width: 100%;
+    height: 415px;
+    border-radius: 50px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50px;
+}
+
+.flip-card-back {
+    background: linear-gradient(60deg, red, blue);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back div {
+    background-color: rgba(128, 128, 128, 0.709);
+    padding: 5px;
+    border-radius: 50px;
+    width: 90%;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-back div p {
+    text-align: justify;
+    margin: 5px;
+}
+
+.name {
+    background-color: rgba(128, 128, 128, 0.709);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #flip-cards {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #flip-cards {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .flip-card {
+        width: 200px;
+        height: 315px;
+    }
+}
+
+#about {
+    text-align: center;
+    margin: 10%;
+}
+
+#downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+#downloads ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98.5%;
+    background-color: rgba(128, 128, 128, 0.727);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+@media only screen and (max-width: 440px) {
+    li span.badge {
+        display: none;
+    }
+}
+
+#downloads ul li span:not(span:has(.badge)) {
+    background-color: green;
+    padding: 2px;
+    margin: 2px;
+    font-weight: bold;
+}
+
+#downloads ul li span:not(span:has(.badge)) i {
+    margin-right: 5px;
+}
+
+#downloads ul li span:not(span:has(.badge)):hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+#blocker {
+    position: fixed;
+    z-index: 50;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(169, 169, 169, 0.665);
+}
+
+#log-in {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80dvw;
+    min-height: 70dvh;
+    z-index: 100;
+    background: linear-gradient(45deg, red, blue);
+    border: none;
+    border-radius: 20px;
+}
+
+#log-in form {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 67.5vh;
+}
+
+input:not(input[type="checkbox"]) {
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border: 3px solid #ccc;
+    padding: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+}
+
+input:not(input[type="checkbox"]):focus {
+    border: 3px solid blue;
+}
+
+label:not(label:has(input)) {
+    font-size: 30px;
+}
+
+#log-in form div:has(span) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+#log-in form div:has(b) {
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+#log-in form div:has(b) input[type="checkbox"] {
+    margin-bottom: 10px;
+}

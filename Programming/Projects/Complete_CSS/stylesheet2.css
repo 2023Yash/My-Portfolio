@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+.mainsect {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.inlimpexa {
+    color: white !important;
+}
+
+#selofperaid {
+    background-color: aquamarine;
+    color: black;
+    border: #383333 5px solid;
+}
+
+.selofperacla {
+    background-color: aquamarine;
+    border: #383333 5px solid;
+}
+
+.cobla {
+    color: rgb(255, 0, 0);
+}
+
+h2 {
+    background-color: #3fa168;
+    color: white;
+    border: #383333 8px solid;
+    text-align: center;
+}
+
+.boma {
+    margin-bottom: 50px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.pera {
+    background-color: #383333;
+    color: white;
+    border: #3fa168 3px solid;
+    text-align: center;
+}
+
+.fonti {
+    font-family: fantasy;
+    line-height: 6em;
+}
+
+.fonto {
+    font-family: 'Ubuntu', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 6em;
+    font-weight: bold;
+}
+
+.container {
+    width: 500px;
+    height: 200px;
+    font-family: cursive;
+    background-color: plum;
+    border-top: purple 10px solid;
+    border-bottom: rgb(221, 4, 221) 10px solid;
+    border-left: rgb(168, 3, 168) 10px solid;
+    border-right: rgb(216, 3, 216) 10px solid;
+    border-top-left-radius: 20px;
+}
+
+.container2 {
+    width: 500px;
+    height: 500px;
+    font-family: cursive;
+    background-color: white;
+    border-top: purple 10px solid;
+    border-bottom: rgb(221, 4, 221) 10px solid;
+    border-left: rgb(168, 3, 168) 10px solid;
+    border-right: rgb(216, 3, 216) 10px solid;
+    background-image: url('cube lube.jpg');
+    background-repeat: round;
+}
+
+.container3 {
+    width: 500px;
+    height: 500px;
+    font-family: cursive;
+    background-color: white;
+    border-top: purple 10px solid;
+    border-bottom: rgb(221, 4, 221) 10px solid;
+    border-left: rgb(168, 3, 168) 10px solid;
+    border-right: rgb(216, 3, 216) 10px solid;
+    background-image: url('cube lube.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-bottom-right-radius: 20px;
+}
+
+.container4 {
+    background-color: #ffe6ff;
+    border: purple 5px solid;
+    padding: 30px 10px 30px 10px;
+    margin: 30px;
+    border-radius: 25px;
+    width: 600px;
+}
+
+.container5 {
+    border: black 3px solid;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    width: 900px;
+}
+
+.container6 {
+    width: 900px;
+    border: 3px solid rgb(255, 191, 180);
+    margin: auto;
+    font-family: cursive;
+}
+
+.store {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    padding: 20px 25px;
+    background-color: rgb(255, 191, 180);
+    margin: 20px;
+}
+
+#lego {
+    float: left;
+    width: 47%;
+}
+
+#RubiksCube {
+    float: left;
+    width: 47%;
+}
+
+#Xbox {
+    width: 100%;
+    clear: both;
+    margin-right: 750px;
+}
+
+.btn {
+    text-align: center;
+    background-color: #3fa168;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: cursive;
+    display: block;
+}
+
+.btn:hover {
+    background-color: #299c59;
+}

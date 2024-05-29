@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height comparison tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-width: 0;
+            min-height: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            min-height: 100svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 0.5vw;
+            margin: 1vw;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: tomato;
+            color: white;
+            cursor: pointer;
+            transition: all 500ms ease-out;
+        }
+
+        button:hover {
+            background-color: rgb(255, 162, 146);
+            color: black;
+        }
+
+        h1 {
+            font-size: 5vw;
+            text-align: center;
+        }
+
+        .row {
+            min-height: 72vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Height comparison tool</h1>
+        <div class="container">
+            <div class="row">
+                <span>
+                    <img id="mami" style="height: 65vh; width: 170px;" src="mami.png" alt="hone wali mami">
+                </span>
+                <span>
+                    <img id="mama" style="height: 65vh; width: 170px;" src="mama.png" alt="mama">
+                </span>
+            </div>
+            <div>
+                 <input type="number" placeholder="Inches" id="Inches">
+                 <button onclick="height()">compare</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

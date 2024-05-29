@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="learningJS.css">
+    <title>JavaScript w3schools examples</title>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function clickCounter() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result1").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            } else {
+                document.getElementById("result1").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function clickCounter() {
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result2").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+            } else {
+                document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <div>
+        <header class="header">
+            <h1>JavaScript and Graphics</h1>
+            <img class="logo" src="JSlogo.jpg" alt="JS logo" style="max-width:100%;height:auto;">
+        </header>
+    </div>
+
+    <!-- navigation -->
+
+    <div>
+        <nav class="toplist">
+            <a class="active" href="#home"><img src="lube.jpg" alt="cube" style="width:20px;height:20;"></a>
+            <a href="http://127.0.0.1:5500/form.html" target="_blank">Sign in</a>
+            <a href="http://127.0.0.1:5500/learning.html" target="_blank">HTML</a>
+            <a href="http://127.0.0.1:5500/learning%202.html" target="_blank">CSS</a>
+            <a href="http://127.0.0.1:5500/Project%201.html" target="_blank">Projects</a>
+        </nav>
+    </div>
+
+    <!-- article and aside -->
+
+    <div>
+        <section class="section">
+            <aside class="aside">
+
+                <h2>JavaScript Images Example</h2>
+
+                <span>
+
+                    <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap"
+                        width="400" height="379">
+
+                    <map name="workmap">
+                        <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">
+                    </map>
+
+                    <script>
+                        function myFunction() {
+                            alert("You clicked the coffee cup!");
+                        }
+                    </script>
+
+                    <script>
+                        function light(sw) {
+                            var pic;
+                            if (sw == 0) {
+                                pic = "https://www.w3schools.com/html/pic_bulboff.gif"
+                            } else {
+                                pic = "https://www.w3schools.com/html/pic_bulbon.gif"
+                            }
+                            document.getElementById('myImage').src = pic;
+                        }
+                    </script>
+
+                    <img id="myImage" src="https://www.w3schools.com/html/pic_bulboff.gif" width="100" height="180">
+
+                    <p>
+                        <button type="button" onclick="light(1)">Light On</button>
+                        <button type="button" onclick="light(0)">Light Off</button>
+                    </p>
+
+                    <noscript>No JavaScript support available in your browser</noscript>
+
+                </span>
+
+                <span>
+
+                    <h2>Emapty Canvas</h2>
+
+                    <canvas id="myCanvas0" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphic.
+                    </canvas>
+
+                    <h2>Canvas with Circle & Diagonal</h2>
+
+                    <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphic.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas1");
+                        var ctx = c.getContext("2d");
+                        ctx.moveTo(0, 0);
+                        ctx.lineTo(200, 100);
+                        ctx.stroke();
+                    </script>
+
+                    <canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphic.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas2");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();
+                        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    </script>
+
+                    <h2>Canvas with Text</h2>
+
+                    <canvas id="myCanvas3" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphic.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas3");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "30px Arial";
+                        ctx.fillText("Hello World", 10, 50);
+                    </script>
+
+                    <canvas id="myCanvas4" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphics.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas4");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "30px Arial";
+                        ctx.strokeText("Hello World", 10, 50);
+                    </script>
+
+                    <h2>Canvas with Gradient</h2>
+
+                    <canvas id="myCanvas5" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphics.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas5");
+                        var ctx = c.getContext("2d");
+                        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+                        grd.addColorStop(0, "red");
+                        grd.addColorStop(1, "white");
+                        ctx.fillStyle = grd;
+                        ctx.fillRect(10, 10, 150, 80);
+                    </script>
+
+                    <canvas id="myCanvas6" width="200" height="100" style="border:1px solid #000000;">
+                        Your browser does not support the Graphics.
+                    </canvas>
+
+                    <script>
+                        var c = document.getElementById("myCanvas6");
+                        var ctx = c.getContext("2d");
+                        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+                        grd.addColorStop(0, "red");
+                        grd.addColorStop(1, "white");
+                        ctx.fillStyle = grd;
+                        ctx.fillRect(10, 10, 150, 80);
+                    </script>
+
+                    <h2>Using SVG to draw circle,rectagnle,sqaure and star</h2>
+
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                        Sorry, your browser does not support SVG.
+                    </svg>
+
+                    <svg width="400" height="100">
+                        <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+
+                    <svg width="400" height="180">
+                        <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+                            style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+
+                    <svg width="300" height="200">
+                        <polygon points="100,10 40,198 190,78 10,78 160,198"
+                            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+
+                    <h2>Using SVG to draw SVG logo</h2>
+
+                    <svg height="130" width="500">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+                        Sorry, your browser does not support SVG.
+                    </svg>
+
+                </span>
+            </aside>
+
+            <!-- article -->
+
+            <article class="article">
+                <h2>Play with text using JavaScript.</h2>
+
+                <h1 id="myHeader">Bye</h1>
+                <button onclick="displayResult()">Change text</button>
+
+                <script>
+                    function displayResult() {
+                        document.getElementById("myHeader").innerHTML = "Have a nice day!";
+                    }
+                </script>
+
+                <br>
+
+                <h2>Show Date & time with JavaScript</h2>
+
+                <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+                    Click to Date and Time.</button>
+
+                <p id="demo"></p>
+
+                <p id="demoo"></p>
+
+                <script>
+                    document.getElementById("demoo").innerHTML = "This is written in peragraph using JavaScript!";
+                </script>
+
+                <h2 id="demooo">change to black & white font when cilcked.</h2>
+
+                <script>
+                    function myFunction() {
+                        document.getElementById("demooo").style.fontSize = "30px";
+                        document.getElementById("demooo").style.color = "white";
+                        document.getElementById("demooo").style.backgroundColor = "black";
+                    }
+                </script>
+
+                
+
+                <button type="button" onclick="myFunction()">Click to change font</button>
+
+                <p>Click the button to get your coordinates.</p>
+
+                <button onclick="getLocation()">Try It</button>
+
+                <p id="demooooooooooooooooooooooooooooooo"></p>
+
+                <script>
+                    var x = document.getElementById("demooooooooooooooooooooooooooooooo");
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                        } else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+
+                    function showPosition(position) {
+                        x.innerHTML = "Latitude: " + position.coords.latitude +
+                            "<br>Longitude: " + position.coords.longitude;
+                    }
+
+                    function showError(error) {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                x.innerHTML = "User denied the request for Geolocation."
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                x.innerHTML = "Location information is unavailable."
+                                break;
+                            case error.TIMEOUT:
+                                x.innerHTML = "The request to get user location timed out."
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                x.innerHTML = "An unknown error occurred."
+                                break;
+                        }
+                    }
+                </script>
+
+                <p>Click the button to get your coordinates.</p>
+
+                <button onclick="getLocation()">Try It</button>
+
+                <p id="demononononono"></p>
+
+                <script>
+                    var x = document.getElementById("demononononono");
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.watchPosition(showPosition);
+                        } else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+
+                    function showPosition(position) {
+                        x.innerHTML = "Latitude: " + position.coords.latitude +
+                            "<br>Longitude: " + position.coords.longitude;
+                    }
+                </script>
+
+                <p>Image to use:</p>
+                <img id="scream" src="https://www.w3schools.com/html/img_the_scream.jpg" alt="The Scream" width="220"
+                    height="277">
+
+                <p>Canvas to fill:</p>
+                <canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">
+                    Your browser does not support the HTML canvas tag.</canvas>
+
+                <p><button onclick="myCanvas()">Try it</button></p>
+
+                <script>
+                    function myCanvas() {
+                        var c = document.getElementById("myCanvas");
+                        var ctx = c.getContext("2d");
+                        var img = document.getElementById("scream");
+                        ctx.drawImage(img, 10, 10);
+                    }
+                </script>
+
+                <p>Drag the W3Schools image into the rectangle:</p>
+
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <br>
+                <img id="drag1" src="https://www.w3schools.com/html/img_logo.gif" draggable="true"
+                    ondragstart="drag(event)" width="336" height="69">
+
+                <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="https://www.w3schools.com/html/img_w3slogo.gif" draggable="true" ondragstart="drag(event)"
+                        id="drag11" width="88" height="31">
+                </div>
+
+                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+
+                <div id="result"></div>
+
+                <script>
+                    if (typeof (Storage) !== "undefined") {
+                        localStorage.setItem("lastname", "Rana");
+                        document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                    } else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                </script>
+
+                <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+                <div id="result1"></div>
+
+                <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+                <div id="result2"></div>
+
+                <button onclick="location.reload();">Refresh Page</button>
+
+            </article>
+        </section>
+    </div>
+
+    <!--footer-->
+
+    <div>
+        <footer class="footer">
+            <h3>Thanks for visiting</h3>
+            <p><a href="mailto:yashnaudiyal@gmail.com">Contact us</a></p>
+            <details>
+                <summary>Learn more...</summary>
+                This website is made to make a area where all the examples HTML tutorial of w3schools containing
+                JavaScript are easily available.
+            </details><br>
+            <address>
+                Written by <strong>Yash Naudiyal.</strong><br>
+                From <strong>India</strong>
+                <p> &#169; copyright JavaScript examples.com</p>
+            </address>
+        </footer>
+    </div>
+
+</body>
+
+</html>

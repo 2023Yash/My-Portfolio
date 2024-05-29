@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>M.L Khanna DAV public school</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        #mainHeaderDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mainHeaderDiv div {
+            margin: 0 100px 0 100px;
+        }
+
+        #nav {
+            background-color: royalblue;
+            padding: 5px;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 6px;
+            margin-left: 6px;
+        }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+        #dropdownNav {
+            background-image: linear-gradient(90deg, rgb(0, 119, 255), rgb(53, 212, 0));
+            padding: 10px;
+        }
+
+        .dropdownNavA {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px 0 10px;
+            font-weight: bold;
+        }
+
+        .dropdownNavA:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-image: linear-gradient(90deg, rgb(0, 119, 255), rgb(53, 212, 0));
+            color: white;
+            padding: 50px 0 0;
+            border-top-right-radius: 80px;
+        }
+
+        main {
+            min-height: 60vh;
+        }
+
+        #uselessInfo {
+            font-size: small;
+            background-color: royalblue;
+        }
+
+        #mainFooter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        #mainFooter div {
+            width: 45vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+        }
+
+        #mainFooter div a {
+            color: white;
+            background-color: rgba(164, 164, 164, 0.442);
+            padding: 5px;
+            width: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #MainBtn {
+            margin: 10px 0 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #MainBtn a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 10px 10px 10px;
+            border-radius: 20px;
+            height: 5vh;
+            transition: border 100ms ease-in;
+        }
+
+        #MainBtn a:nth-child(odd) {
+            background: radial-gradient(red, orange);
+        }
+
+        #MainBtn a:nth-child(even) {
+            background: radial-gradient(orange, red);
+        }
+
+        #MainBtn a:hover {
+            border: 3px solid rgb(0, 0, 0);
+        }
+
+        #messages {
+            display: flex;
+            justify-content: center;
+        }
+
+        #messages div {
+            width: 45vw;
+            border: 5px solid rgb(53, 212, 0);
+            padding: 10px;
+            border-radius: 30px;
+            margin-left: 10px;
+            margin-bottom: 50px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        #messages div button {
+            background-color: royalblue;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-color: rgb(53, 212, 0);
+            border-radius: 5px;
+        }
+
+        #messages div button:hover {
+            background-color: rgb(0, 119, 255);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(53, 212, 0);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: royalblue;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(0, 119, 255);
+        }
+
+        @media only screen and (max-width: 710px) {
+            #mainFooter {
+                display: block;
+            }
+
+            #mainFooter div {
+                width: 100%;
+            }
+        }
+
+        #animated_div {
+            width: 70px;
+            height: 47px;
+            background: red;
+            color: #ffffff;
+            position: relative;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+            animation: animated_div 5s infinite;
+            -moz-animation: animated_div 5s infinite;
+            -webkit-animation: animated_div 5s infinite;
+            -o-animation: animated_div 5s infinite;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes animated_div {
+            0% {
+                transform: rotate(0deg);
+                left: 0%;
+                background: red;
+                color: white;
+            }
+
+            25% {
+                transform: rotate(20deg);
+                left: 0%;
+                background: orange;
+                color: white;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                left: calc(100%/3);
+                background: yellow;
+                color: black;
+            }
+
+            55% {
+                transform: rotate(0deg);
+                left: calc(100%/3);
+                background: lime;
+                color: black;
+            }
+
+            70% {
+                transform: rotate(0deg);
+                left: calc(100%/3);
+                background: green;
+                color: white;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                left: 0%;
+                background: indigo;
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="animated_div">DAV</div>
+    <header>
+        <nav id="nav">
+            <a href="https://davcmc.net.in/" target="_blank">ABOUT DAVCMC</a> |
+            <a href="http://appsabha.org/" target="_blank">AARYA SAMAJ</a> |
+            <a href="https://davcmc.net.in/B46D2794-51B4-4B3A-95B8-46BB25875D74/CMS/Page/MESSAGE-OF-THE-PRESIDENT"
+                target="_blank">PRESIDENT's MESSAGE</a> |
+            <a href="https://www.youtube.com/user/DAVCMCVIDEOS" target="_blank">DAVCMC VIDEOS</a> |
+            <a href="https://www.facebook.com/davunited" target="_blank">ALUMNI</a> |
+            <a href="http://ihub.davcmc.net.in/" target="_blank">DAVCMC INTELLECTUAL HUB</a>
+        </nav>
+        <div id="mainHeaderDiv">
+            <img src="https://davdwarka.in/MyImages/LOGO.png" alt="Dav Dwarka logo">
+            <div>
+                <h1>M.L. KHANNA DAV PUBLIC SCHOOL , DWARKA</h1>
+                <p>South West, Delhi 110075 School Code : 25266 Affiliation No: 2730745</p>
+            </div>
+            <img src="https://davdwarka.in/SiteImages/e1391b9a-5d6a-4495-bc5c-afe17e9c33ef_0885f479-49f7-4b27-8230-22ccf1c6082c_Slide2.JPG.png"
+                alt="Microsoft Powered">
+        </div>
+        <nav id="dropdownNav" style="text-align: center;">
+            <a href="https://davdwarka.in/" class="dropdownNavA">Home</a>
+            <a href="https://davdwarka.in/E8EC73A1-0086-45AE-94FB-E3202B614444/CMS/Page/About-School"
+                class="dropdownNavA" target="_blank">About Us</a>
+            <a href="https://davdwarkain-my.sharepoint.com/personal/tarunateotia_davdwarkain_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftarunateotia%5Fdavdwarkain%5Fonmicrosoft%5Fcom%2FDocuments%2FTerm%201%20%2D%20Syllabus%20%282023%2D2024%29&ga=1"
+                class="dropdownNavA" target="_blank">Academics</a>
+            <a href="https://davdwarka.in/FE8660EA-2384-4BFB-9453-5006E7A40338/CMS/Page/School-Uniform"
+                class="dropdownNavA" target="_blank">Students</a>
+            <a href="https://davdwarka.in/E809CE2A-58BB-4EC8-8F10-697D5F0B1CF3/CMS/Page/Ten-Sutras" class="dropdownNavA"
+                target="_blank">Examination</a>
+            <a href="https://davdwarka.in/C5B0AD7D-A7EE-4EE4-8191-312E4E2BBACA/CMS/Page/Clubs" class="dropdownNavA"
+                target="_blank">Activities</a>
+            <a href="https://davdwarka.in/5DDDBB74-C91E-4C7A-8A6A-42B7E770EFB4/CMS/Page/Pre-Primary-to-IX---2024-2025"
+                class="dropdownNavA" target="_blank">Admission</a>
+            <a href="https://davdwarka.in/00D5EC9E-235B-4180-97A6-C775B5F57ABD/CMS/Page/Youtube-Videos"
+                class="dropdownNavA" target="_blank">Infrastructures</a>
+            <a href="https://davdwarka.in/05988120-1D15-490E-AE4F-F273E5C1A32D/CMS/Page/Contact-Us" class="dropdownNavA"
+                target="_blank">Help Desk</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="https://content3.jdmagicbox.com/comp/delhi/q5/011pxx11.xx11.000899681638.m2q5/catalogue/dav-public-school-dwarka-sector-6-delhi-d-a-v-public-school-2v2tk4xom8.jpg"
+            alt="DAV image" style="width: 100%;">
+        <div style="text-align: center; background-color: brown; color: white;">M.L Khanna DAV public school</div>
+        <div id="MainBtn">
+            <a href="https://davdwarka.in/DEEE199B-0D75-4D4E-86BC-599A22EFD79A/CMS/Page/Alumni"
+                target="_blank">Alumni</a>
+            <a href="https://davdwarka.in/FDF8B47E-DFA2-486E-908D-7DAEAC33A5FD/CMS/Page/Vision-And-Mission"
+                target="_blank">Vision And Mission</a>
+            <a href="https://davdwarka.in/5AF15B43-24E8-470A-B907-8429BB7540C4/CMS/Page/P.T.M" target="_blank">PTM</a>
+            <a href="https://davdwarka.in/AFFEE149-DF09-4195-A617-E2BACEB0250B/CMS/Page/Pay-Online-Fee"
+                target="_blank">Pay Online Fee</a>
+            <a href="https://davdwarka.in/7B6E5056-3281-44C6-A791-E685D6EC6E82/CMS/Page/Fee-Structure"
+                target="_blank">Fee Structure</a>
+        </div>
+        <div id="messages">
+            <div>
+                <img src="https://davdwarka.in/File/49/Message_29a6e9ef-5620-4069-bf31-6b2d06fdabd2_Message_9e7760da-7cea-4bc0-824a-e42b9732cf54__MG_3283.jpg"
+                    alt="principles image" style="border-radius: 30px; width: 100%;">
+                <article style="margin: 10px;">
+                    <h3>PRINCIPAL'S MESSAGE</h3>
+                    <button id="btn1" onclick="Show2()">Click to Read</button>
+                    <p id="para1" style="text-align: justify; display:none;">Wish you all a prosperous and matchless New
+                        Year !<br>
+                        The school is expanding its outreach and expending every ounce of possibility to make the most
+                        of the opportune time ushered by the pandemic and each day is a testimony to the hard work put
+                        in by the students and facilitators. My class XII and X emblazed their path with triumphant feat
+                        in the CBSE Examination result - 2023, with the highest percentage being 97.4 % in Class XII &
+                        97.2 % in Class X. The result of Class XII this year is an outstanding one with Himani of
+                        Commerce stream securing 97.4%, Mitakshara of medical Stream securing 96.6%, Peehu Khaneja of
+                        Humanities securing 96.6% and Vision Dubey of Non-Medical securing 95.8%. A total of 29 students
+                        secured 90% and above. In Class X a total of 60 students secured 90% and above.
+                        The glory of the Class X & Class XII result becomes more glorious when I share the jubilant news
+                        that 45 teachers are Microsoft Certified Educators, many teachers are Microsoft Technology
+                        Associates and Microsoft Office Specialists. Slowly and steadily we are walking hand in hand
+                        with our stakeholders embracing the innovations in technology with the innovative time.
+                        The facilitators are proactively preparing authentic, usable and creative content for our
+                        learners. The learning modules are designed in such a way that the topic to be taken up is
+                        touched upon from all sides catering to the four different types of learning- Visual,
+                        Kinesthetic, Auditory and Reading/Writing. Activity based learning is intricately woven in all
+                        the subjects be it English, Hindi, Science, Sanskrit, Social Science or Mathematics. History is
+                        brought alive by special assemblies, Role play, exhibitions and Inter Disciplinary Learning.
+                        Students’ understanding of different concepts is not limited to a particular subject , STEM
+                        activities are examples of how Science, Technology, Engineering, and Mathematics can be brought
+                        together to give a 360◦ view of the concept taught. Fusion brings a variety of techniques,
+                        genres and vistas and gives impetus to experimentation and innovation. Music, Arts and Dance is
+                        brought to students in pure form and based on that understanding they enjoy the freedom to
+                        experiment and blend various art forms, techniques and genres. Value education and Value based
+                        education are intrinsic features of the school.
+                        The peer teaching is worth a mention for being efficaciously student- centric .The special
+                        assemblies ,programmes and workshops are being conducted by our staunchly independent stalwarts
+                        .The club meeting have taken a distinct contour due to its online and offline mode.
+                        It is imperative that we keep the flame of curiosity burning and the bent of mind for
+                        application intact, in our students. Let’s promise each other that every step that we take is
+                        with the growth mindset and we all blossom under the blessings of the Omnipotent.Let’s not
+                        forget,<br><b>There are no rainbows without rain , there are no victories without
+                            pain.</b><br><b>Stay Safe!!!!</b><br><i>Monika Mehan</i></p>
+                </article>
+            </div>
+            <div>
+                <img src="https://davdwarka.in/File/49/Message_1774dc2d-9efc-4850-b873-86bd73758fa7_School%20building%20-27.11.2020.jpg"
+                    alt="School image" style="border-radius: 30px; width: 100%;">
+                <article style="margin: 10px;">
+                    <h3>About Our School</h3>
+                    <button id="btn2" onclick="Show()">Click to Read</button>
+                    <p id="para2" style="text-align: justify; display:none;">M.L. Khanna DAV Public School, Dwarka
+                        believes in the culmination of knowledge and talent into
+                        performance. Working under the aegis of DAV College Managing Committee, Chitra Gupta Road, New
+                        Delhi, the school has perpetuated a conducive environment setting benchmarks in varied realms of
+                        educational arena. Since its inception in 1990, the school has adopted a holistic approach
+                        through a well thought curriculum including modern teaching methods interwoven with rich vedic
+                        culture to sustain high degree of ethics and morality among students. The school is privileged
+                        to have a dynamic state of the art complex on a lush green four acre campus which serves as an
+                        ultimate habitat for learning. Today, the school is replete with the strength of over 3100
+                        students and the work force of over 125 highly proficient and experienced faculty members
+                        focusing on success under the able guidance of the Principal and the DAV College Managing
+                        Committee.<br>
+
+                        Principal Ms. Monika Mehan, who strongly believes that education is the connecting force between
+                        what our society needs and what it should be, has initiated a number of programmes in school
+                        like Generation Global – An innovative school‘s programme by the Tony Blair Faith Foundation and
+                        Erudition -Distinguished Guest Lecture Series that offers a robust slate of lecture and enriches
+                        the intellectual scientific and cultural life of students and faculty of DAV Dwarka by inviting
+                        distinguished people from varied fields to the school campus.<br>
+
+                        A wide range of activities conducted through 21 activity clubs in school - Face to Faith Club,
+                        Interact Club, Heritage Club, Health and Wellness Club, Culinary Club, Disaster Management Club,
+                        Photography Club, Dramatics Club, Bonsai Club, Music Club, Art Club etc - play an important role
+                        in promoting varied interests of students, embedding global dimension in their outlook and help
+                        them acquire an international and digital competence.<br>
+
+                        Perpetual encouragement, inspiration and guidance from the enlightened parents combined with the
+                        efforts of a qualified, dedicated and tech-savvy team of teachers, enable the students and the
+                        school to achieve success in educational endeavours.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="mainFooter">
+            <div class="footerDivs">
+                <h2>Contact Us</h2>
+                <p><b>M.L.KHANNA DAV PUBLIC SCHOOL,</b>
+                    <br>
+                    Dwarka South West,Delhi 110075
+                    <br>
+                    Phone No.:011-45638246, 011-45038431
+                    <br>
+                    Affiliation No. 2730745, School No. 25266
+                    <br>
+                    E-mail: school@davdwarka.in
+                </p><br>
+                <h2>Follow Us</h2>
+                <p>
+                    <a href="#"><i class="fa fa-facebook-official" style="font-size:30px;color:blue"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play" style="font-size:30px;color:red"></i></a>
+                    <a href="#"><i class="fa fa-twitter" style="font-size:30px;color:rgb(0, 153, 255)"></i></a>
+                </p>
+            </div>
+            <div class="footerDivs">
+                <h2>Quick Links</h2><br>
+                <a href="https://davdwarka.in/Alumni-Registration">Alumni</a>
+                <a href="https://davdwarka.in/Full/Photo/all">Photo Gallery</a>
+                <a href="https://davdwarka.in/Social-Awareness">Social Awareness</a>
+            </div>
+        </div>
+        <p id="uselessInfo">Copyright 2024 DAV PUBLIC SCHOOL,DWARKA.All Rights Reserved </p>
+    </footer>
+    <script>
+        function Show() {
+            if (document.getElementById('btn2').textContent == 'Click to Read') {
+                document.getElementById('para2').style.display = 'block';
+                document.getElementById('btn2').textContent = 'Click to Hide';
+            } else {
+                document.getElementById('para2').style.display = 'none';
+                document.getElementById('btn2').textContent = 'Click to Read';
+            }
+        }
+
+        function Show2() {
+            if (document.getElementById('btn1').textContent == 'Click to Read') {
+                document.getElementById('para1').style.display = 'block';
+                document.getElementById('btn1').textContent = 'Click to Hide';
+            } else {
+                document.getElementById('para1').style.display = 'none';
+                document.getElementById('btn1').textContent = 'Click to Read';
+            }
+        }
+    </script>
+</body>
+
+</html>

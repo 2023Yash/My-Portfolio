@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #container h1 {
+            font-family: fantasy;
+        }
+
+        #container div {
+            font-family: sans-serif;
+        }
+
+        #container button {
+            margin-top: 3px;
+            padding: 3px;
+            font-weight: bold;
+            border: 2px solid tomato;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        #container button:hover {
+            background-color: whitesmoke;
+        }
+
+        #container div img {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Dice Roller</h1>
+        <div>
+            <label for="number"># of dice:</label>
+            <input name="number" type="number" id="numOfDice" value="1" min="1" max="40"><br>
+        </div>
+        <button onclick="rollDice()">Roll Dice</button>
+        <div id="diceResult"></div>
+        <div id="diceImages"></div>
+    </div>
+
+    <script>
+        function rollDice(){
+            const numOfDice = document.getElementById("numOfDice").value;
+            const diceResult = document.getElementById("diceResult");
+            const diceImages = document.getElementById("diceImages");
+            const values = [];
+            const images = [];
+        
+            for(let i = 0; i < numOfDice; i++){
+                const value = Math.floor(Math.random() * 6) + 1;
+                values.push(value);
+                images.push(`<img src="images/${value}.png" alt="Dice ${value}">`);
+            }
+        
+            diceResult.textContent = `dice: ${values.join(', ')}`;
+            diceImages.innerHTML = images.join('');
+        }
+    </script>
+</body>
+</html>

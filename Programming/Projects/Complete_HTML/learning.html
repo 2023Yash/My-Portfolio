@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- metatags -->
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is a learning website">
+  <meta name="keywords" content="learning">
+  <meta name="author" content="Yash Naudiyal">
+  <meta http-equiv="refresh" content="15">
+  <meta name="robots" content="NOINDEX, NOFOLLOW">
+  <title>Learning ü</title>
+  <link rel="icon" type="favicon.icon" href="favicon.ico">
+
+  <!-- linking stuff -->
+
+  <link rel="stylesheet" href="learning.css">
+  <script> src = "learning.js"</script>
+
+  <!-- internal css -->
+
+  <!-- background color,border padding and margin -->
+
+  <style>
+    body {
+      background-color: wheat;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      border: 2px solid white;
+      padding: 1.8px;
+      margin: 90px;
+    }
+
+    /* link color */
+
+    a:link {
+      color: blue;
+      background-color: whitesmoke;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: green;
+      background-color: whitesmoke;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: red;
+      background-color: whitesmoke;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: darkgoldenrod;
+      background-color: whitesmoke;
+      text-decoration: underline;
+    }
+
+    /* image sizing */
+
+    img {
+      width: 100%;
+    }
+
+    /* Table css */
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    th,
+    td {
+      padding: 5px;
+    }
+
+    table {
+      border-spacing: 10px;
+    }
+
+    /*ID's and class*/
+
+    .div {
+      background-color: rgb(27, 89, 170);
+      color: gold;
+    }
+
+    .span {
+      color: white;
+    }
+
+    #FC {
+      background-color: rgb(53, 126, 194);
+      color: black;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .all-browsers {
+      margin: 0;
+      padding: 5px;
+      background-color: lightgray;
+    }
+
+    .all-browsers>.h1,
+    .browser {
+      margin: 10px;
+      padding: 5px;
+    }
+
+    .browser {
+      background: white;
+    }
+
+    .browser>.h2,
+    .p {
+      margin: 4px;
+      font-size: 90%;
+    }
+
+    caption {
+      caption-side: bottom;
+    }
+  </style>
+
+</head>
+
+<body style="text-align:center;">
+
+  <!-- body code starting -->
+
+  <!--ID's-->
+
+  <p id="top"><a href="#headings">Jump to heading</a></p>
+  <p><a href="#peragraph">Jump to peragraph</a></p>
+  <p><a href="#images">Jump to images</a></p>
+  <p><a href="#links">Jump to link</a></p>
+  <p><a href="#color">Jump to color</a></p>
+  <p><a href="#quotation">Jump to quotation</a></p>
+  <p><a href="#tables">Jump to table</a></p>
+  <p><a href="#lists">Jump to lists</a></p>
+  <p><a href="#D&S">Jump to Div & span</a></p>
+  <p><a href="#iframe">Jump to Iframe</a></p>
+  <p><a href="#computercode">Jump to Computercode</a></p>
+  <p><a href="#Semantic">Jump to Semantic</a></p>
+  <p><a href="#emojis">Jump to emojis</a></p>
+  <p><a href="#video">Jump to video</a></p>
+  <p><a href="#youtube">Jump to youtube video</a></p>
+  <p><a href="#object">Jump to object</a></p>
+  <p><a href="#audio">Jump to audio</a></p>
+
+  <!--Heading,peragrph,superscript,subscript,color,font size,center align and horizontal rule-->
+
+  <p id="headings"><a href="#top">Jump to top</a></p>
+  <h1>H<sub>2</sub>O is Water</h1>
+  <h1 style="text-align:center;">Heading</h1>
+  <hr style="background-color:powderblue;">
+  <h1 style="font-size:50px;">I AM BIGGEST</h1>
+  <hr style="background-color:powderblue;">
+  <h1>This is heading 1</h1>
+  <p>Most Important Heading</p>
+  <hr style="background-color:powderblue;">
+  <h2>This is heading 2</h2>
+  <p>2<sup>nd</sup> Most Important Heading</p>
+  <hr style="background-color:powderblue;">
+  <h3>This is heading 3</h3>
+  <p>3<sup>rd</sup> Most Important Heading</p>
+  <hr style="background-color:powderblue;">
+  <h4>This is heading 4</h4>
+  <p>3<sup>rd</sup> Least Important Heading</p>
+  <hr style="background-color:powderblue;">
+  <h5>This is heading 5</h5>
+  <p>2<sup>nd</sup> Least Important Heading</p>
+  <hr style="background-color:powderblue;">
+  <h6>This is heading 6</h6>
+  <p>Least Important Heading</p>
+  <hr style="background-color:powderblue;">
+
+  <!--strong,small,emphasized,robotic font,color font,break line,bold,italic,mark,cut,underline,title,and pre tag-->
+
+  <p id="peragraph"><a href="#top">Jump to top</a></p>This is peraghraph</p>
+  <p>Apple is <strong>red</strong>.</p>
+  <p><em>This is emphasized font.</em></p>
+  <p style="font-family:courier;">This is robotic font</p>
+  <p style="color:red;">This is a peragraph<br> but red.</p>
+  <p style="color:red;"><b>This is a peragraph<br> but bold and red.</b></p>
+  <p style="color:red;"><b><i>This is a peragraph<br> but bold,red and italic.</i></b></p>
+  <p title=About W3Schools>You cannot omit quotes around an attribute value if the value contains spaces.</p>
+  <p><strong>This text is strong because it is body builder.</strong></p>
+  <p><small>This text is small because it is lazy.</small></p>
+  <p>I used <mark>highliter</mark> on screen</p>
+  <p>This is <del>cut</del> and this is <ins>underline</ins>.</p>
+  <p style="color:lightskyblue;"><b>I have left spaces and lines in code
+
+      but its not showing.</b></p>
+  <pre style="color:lightskyblue;"><b>I   have   left   spaces   and   lines   in   code   
+
+but   it   is   showing   up   in   screen   because   I   have   used   pre   tag.</b></pre>
+
+  <bdo dir="rtl">You can't read this.</bdo>
+
+  <!--images,alt,hight and width,size with style,maps,picture,GIF,clickeble image,float,imoji,background image and cite-->
+
+  <p id="images"><a href="#top">Jump to top</a></p>
+  <p style="color:blueviolet;">Rubik'cube</p>
+
+  <img src="cube.jpg" alt="Rubik's cube" style="width:100px;height:200px;">
+  <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width:104px;height:142px;">
+
+  <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap"
+    style="width:400px;height:379px;">
+
+  <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/Computer">
+    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://en.wikipedia.org/wiki/Coffee">
+  </map>
+
+  <img src="https://www.w3schools.com/html/frenchfood4.jpg" alt="French Food" usemap="#foodmap"
+    style="width:450px;height:675px;">
+
+  <map name="foodmap">
+    <area shape="poly"
+      coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147"
+      alt="Croissant" href="https://en.wikipedia.org/wiki/Bread_roll">
+  </map><br>
+
+  <picture>
+    <source media="(min-width: 650px)" srcset="https://www.w3schools.com/html/img_food.jpg">
+    <source media="(min-width: 465px)" srcset="https://www.w3schools.com/html/img_car.jpg">
+    <img src="https://www.w3schools.com/html/img_girl.jpg" style="width:auto;">
+  </picture><br>
+
+  <picture>
+    <source srcset="https://www.w3schools.com/html/img_car.jpg">
+    <source srcset="https://www.w3schools.com/html/img_girl.jpg">
+    <img src="https://www.w3schools.com/html/img_avatar.png" style="width:auto;">
+  </picture><br>
+
+  <img src="monalisa.jpg" alt="monalisa" style="width:50px;height:50px;">
+  <img src="programming.gif" alt="Computer man" style="width:48px;height:48px;">
+  <a href="https://jperm.net/3x3"><img src="cube 2.gif" alt="3x3 tutorial" style="width:42px;height:42px;"></a>
+  <a href="default.asp"><img src="cube 2.gif" alt="3x3 tutorial" style="width:42px;height:42px;"></a>
+  <p><cite>Leonardo da Vinci</cite> made Monalisa</p>
+  <p><img src="cube 2.gif" alt="Smiley face" style="float:left;width:42px;height:42px;"><em>float</em>
+    <img src="cube 2.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+  </p>
+  <h1 style="background-image: url('https://www.w3schools.com/html/img_chania.jpg');">
+    hello<br>
+    bye<br><br><br><br><br><br><br><br><br></h1>
+
+  <!--link,title,target,URL's,GIF bottons,remove underline and link to open bottons-->
+
+  <p id="links"><a href="#top">Jump to top</a></p>
+  <a href="https://jperm.net/" style="text-decoration:none;">not underline</a><br>
+  <a href="https://jperm.net/" title="Go to Jperm.net " target="_blank">Click to open Jperm.net</a><br>
+  <a href="https://jperm.net/" target="_self">Click to open Jperm.net</a><br>
+  <a href="https://jperm.net/" target="_parent">Click to open Jperm.net</a><br>
+  <a href="https://jperm.net/" target="_top">Click to open Jperm.net</a><br>
+  <a href="https://jperm.net/3x3" target="_blank">Click to open Jperm.net 3 by 3</a><br>
+  <a href="https://jperm.net/2x2" target="_blank"><img src="cube 2.gif" alt="Click to open Jperm.net 2 by 2"
+      style="width:42px;height:42px;"></a><br>
+  <button onclick="document.location='//jperm.net/4x4'" target="_blank">4 by 4 Tutorial</button>
+
+  <!--background color,border rgb,hex and hsl-->
+
+  <p id="color"><a href="#top">Jump to top</a></p>
+  <p style="background-color:red;" id="color"><b>This</b></p>
+  <p style="background-color:orange"><b>is</b></p>
+  <p style="background-color:yellow"><b>a</b></p>
+  <p style="background-color:green"><b>rainbow</b></p>
+  <p style="background-color:blue"><b>like</b></p>
+  <p style="background-color:indigo"><b>html</b></p>
+  <p style="background-color:violet"><b>font</b></p>
+
+  <p style="border:2px solid red;"><b>This</b></p>
+  <p style="border:2px solid orange;"><b>is</b></p>
+  <p style="border:2px solid yellow;"><b>a</b></p>
+  <p style="border:2px solid green;"></p><b>rainbow</b></p>
+  <p style="border:2px solid blue;"><b>like</b></p>
+  <p style="border:2px solid indigo;"><b>html</b></p>
+  <p style="border:2px solid violet;"><b>font</b></p>
+
+  <p style="background-color:red;">R - Red</p>
+  <p style="background-color:green;">G - Green</p>
+  <p style="background-color:blue;">B - Blue</p>
+
+  <h3 style="background-color:rgb(127.5, 127.5, 127.5);">This is 127.5, 127.5, 127.5</h3>
+
+  <p style="background-color:red;">RR - Red</p>
+  <p style="background-color:green;">GG - Green</p>
+  <p style="background-color:blue;">BB - Blue</p>
+
+  <h3 style="background-color:#7c7c7c;">#7c7c7c</h3>
+
+  <p style="background-color:red;"> hue</p>
+  <p style="background-color:green;">satuaration</p>
+  <p style="background-color:blue;">light</p>
+
+  <h3 style="background-color:hsl(200, 50%, 50%);">hsl = 200, 50%, 50%</h3>
+
+  <!--blockquite,and malito-->
+
+  <p id="quotation"><a href="#top">Jump to top</a></p>
+  <p>Here is a quote from WWF's website:</p>
+
+  <blockquote cite="https://jperm.net/4x4">
+    Solving the 4x4 Rubik's Cube is not too much harder than solving a 3x3. The concepts of the steps are as follows:
+
+    Solve the center pieces
+    Pair similar edge pieces
+    Turn only the outer layers, and solve it like a 3x3!
+  </blockquote>
+
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+  <!-- tables,cell size,colspan,caption,rowspan and other things from W3 that I can't impliment-->
+
+  <p id="tables"><a href="#top">Jump to top</a></p>
+
+  <table style="width:100%">
+    <tr>
+      <th>Company</th>
+      <th>Pen</th>
+      <th>Pencil</th>
+    </tr>
+    <tr>
+      <td>Nataraj</td>
+      <td>Nataraj Fluro pencil</td>
+      <td>Natarar mist ball pen</td>
+    </tr>
+    <tr>
+      <td>Rorito</td>
+      <td>Rorito T-MAX</td>
+      <td>Rorito quickly</td>
+    </tr>
+  </table><br>
+
+  <table style="width:100%">
+    <tr>
+      <th style="width:25%">Company</th>
+      <th>Pen</th>
+      <th>Pencil</th>
+    </tr>
+    <tr>
+      <td style="height:200px">Nataraj</td>
+      <td>Nataraj Fluro pencil</td>
+      <td>Natarar mist ball pen</td>
+    </tr>
+    <tr>
+      <td style="height:200px">Rorito</td>
+      <td>Rorito T-MAX</td>
+      <td>Rorito quickly</td>
+    </tr>
+  </table><br>
+
+  <table style="width:100%">
+    <tr>
+      <th>Firstname</th>
+      <td>Nischay</td>
+      <td>Jain</td>
+    </tr>
+    <tr>
+      <th>Lastname</th>
+      <td>Aarav</td>
+      <td>Milk</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </table><br>
+
+  <table style="width:100%">
+    <tr>
+      <th>Company</th>
+      <th colspan="2">Pen & Pencil</th>
+    </tr>
+    <tr>
+      <td>Nataraj</td>
+      <td>Nataraj Fluro pencil</td>
+      <td>Natarar mist ball pen</td>
+    </tr>
+    <tr>
+      <td>Rorito</td>
+      <td>Rorito T-MAX</td>
+      <td>Rorito quickly</td>
+    </tr>
+  </table><br>
+
+  <table style="width:100%">
+    <caption>Stationery Company</caption>
+    <tr>
+      <th>Company</th>
+      <th>Pen</th>
+      <th>Pencil</th>
+    </tr>
+    <tr>
+      <td>Nataraj</td>
+      <td>Nataraj Fluro pencil</td>
+      <td>Natarar mist ball pen</td>
+    </tr>
+    <tr>
+      <td>Rorito</td>
+      <td>Rorito T-MAX</td>
+      <td>Rorito quickly</td>
+    </tr>
+  </table><br>
+
+  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_border_round1" target="blank">carve link</a>
+  <br>
+
+  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_border_round2" target="blank">carve link
+    2</a>
+  <br>
+
+  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_border_color" target="blank">carve link 3</a>
+  <br>
+
+  <a href="https://www.w3schools.com/html/html_table_styling.asp" target="blank">carve link 4</a>
+  <br>
+
+  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_colgroup4" target="blank">carve link 5</a>
+  <br>
+
+  <!-- list,ul,ol,disc,circle,square,none,type-1,type-A,type-a,type-I,type-i,dl,dt,dd, and details-->
+
+  <p id="lists"><a href="#top">Jump to top</a></p>
+
+  <h2>Unordered List</h2>
+
+  <p>list of grocery</p>
+
+  <ul>
+    <li>Milk</li>
+    <li>Carrot</li>
+    <li>Tomato</li>
+  </ul>
+
+  <ul style="list-style-type:disc;">
+    <li>Milk</li>
+    <li>Carrot</li>
+    <li>Tomato</li>
+  </ul>
+
+  <ul style="list-style-type:circle;">
+    <li>Milk</li>
+    <li>Carrot</li>
+    <li>Tomato</li>
+  </ul>
+
+  <ul style="list-style-type:square;">
+    <li>Milk</li>
+    <li>Carrot</li>
+    <li>Tomato</li>
+  </ul>
+
+  <ul style="list-style-type:none;">
+    <li>Milk</li>
+    <li>Carrot</li>
+    <li>Tomato</li>
+  </ul>
+
+  <ul>
+    <li>Grocery</li>
+    <ul>
+      <li>Carrot</li>
+      <li>Tamato</li>
+    </ul>
+    <li>Snacks</li>
+    <ul>
+      <li>Chocolate</li>
+      <li>Lays</li>
+    </ul>
+    <ul>
+
+    </ul>
+  </ul>
+
+  <h2>Orerdered List</h2>
+
+  <p>list of snack</p>
+
+  <ol>
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol type="1">
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol type="A">
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol type="a">
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol type="I">
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol type="i">
+    <li>Chocolate</li>
+    <li>Lays</li>
+    <li>Dorito</li>
+  </ol>
+
+  <ol>
+    <li>Grocery</li>
+    <ol>
+      <li>Carrot</li>
+      <li>Tamato</li>
+    </ol>
+    <li>Snacks</li>
+  </ol>
+
+  <ol>
+    <li>Chocolate</li>
+    <li>Lays</li>
+  </ol><br>
+
+  <ol start="10">
+    <li>Carrot</li>
+    <li>Tamato</li>
+    <ol>
+
+      <h2>List with Discription</h2>
+
+      <p>List with discription of snack</p>
+
+    </ol>
+  </ol>
+
+  <dl>
+    <dt>Chocolate</dt>
+    <dd>Chocolate of Cadbury</dd>
+  </dl>
+
+  <details>
+    <p style="font-size:50px;"><em style="color:rgb(255, 227, 69);"><ins style="background-color:white;">Cadbury</ins>
+      </em></p>
+  </details>
+
+  <!-- class,ID's,Div and Span -->
+
+  <p id="D&S"><a href="#top">Jump to top</a></p>
+
+  <div class="div">
+
+    <h1>Delhi</h1>
+
+    <p>Delhi is capital of India.We can see <span class="span"><strong>India Gate</strong></span> here.</p>
+
+  </div>
+
+  <h1 id="FC">My Header</h1>
+
+  <!-- iframe and border-->
+
+  <p id="iframe"><a href="#top">Jump to top</a></p>
+
+  <iframe src="http://127.0.0.1:5500/learningJS.html" style="border:none;" title="Iframe Example"></iframe><br>
+
+  <iframe src="http://127.0.0.1:5500/learningJS.html" style="border:2px solid rgb(255, 188, 143);"
+    title="Iframe Example"></iframe><br>
+
+  <iframe src="http://127.0.0.1:5500/learningJS.html" height="500" width="800" title="Iframe Example"></iframe>
+
+  <iframe src="http://127.0.0.1:5500/learningJS.html" style="height:500px;width:800px" title="Iframe Example"></iframe>
+
+  <!--code,kbd,samp and var-->
+
+  <p id="computercode"><a href="#top">Jump to top</a></p>
+
+  <h2>Formula</h2>
+
+  <code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+
+  <h2>Shortcut</h2>
+
+  <p>Save by pressing <kbd>Ctrl + S</kbd></p>
+
+  <img src="file" alt="file">
+
+  <p><samp>File not found.<br>Press c to continue</samp></p>
+
+  <pre>
+        <code>
+x = 5;
+y = 6;
+z = x + y;
+        </code>
+</pre>
+
+  <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and
+    <var>h</var> is the vertical height.
+  </p>
+
+  <!--figure,figcaption,article and section-->
+
+  <p id="Semantic"><a href="#top">Jump to top</a></p>
+
+  <section>
+    <h1>Sectoin</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga nesciunt est quia vero deleniti officia
+      laudantium accusamus voluptas accusantium repellat aliquid corporis culpa quidem maiores ex facilis
+      reprehenderit voluptate quam, nobis eius. Saepe, quis.</p>
+  </section>
+
+  <section>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eius aliquam magnam tempora, accusantium
+      voluptatum sint perspiciatis iusto porro ea totam cum? Laudantium recusandae, inventore quo tempore
+      architecto ut et unde numquam nulla ullam!</p>
+  </section>
+
+  <article class="all-browsers">
+    <h1 class="h1">Most Popular Browsers</h1>
+    <article class="browser">
+      <h2 class="h2">Google Chrome</h2>
+      <p class="p">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's
+        most popular
+        web browser today!</p>
+    </article>
+    <article class="browser">
+      <h2 class="h2">Mozilla Firefox</h2>
+      <p class="p">Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second
+        most
+        popular web browser since January, 2018.</p>
+    </article>
+    <article class="browser">
+      <h2 class="h2">Microsoft Edge</h2>
+      <p class="p">Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge
+        replaced
+        Internet Explorer.</p>
+    </article>
+  </article>
+
+  <figure>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Trulli" style="max-width:100%;height:auto;">
+    <figcaption><strong>Girl in Jacket</strong></figcaption>
+  </figure>
+
+  <!-- emojis -->
+
+  <p id="emojis"><a href="#top">Jump to top</a></p>
+
+  <p style="font-size:48px">
+    &#128512; &#128516; &#128525; &#128151;
+  </p>
+
+  <!-- video -->
+
+  <p id="video"><a href="#top">Jump to top</a></p>
+
+  <video width="320" height="240" controls>
+    <source src="https://www.youtube.com/watch?v=guzGv5KeY60&list=PLtdb1rYyW5wjtehCgVI7kHlSB1rpNDOQP" type="video/mp4">
+    <source src="https://www.youtube.com/watch?v=guzGv5KeY60&list=PLtdb1rYyW5wjtehCgVI7kHlSB1rpNDOQP" type="video/ogg">
+    Your browser does not support the video.
+  </video>
+
+  <video width="320" height="240" autoplay>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video.
+  </video>
+
+  <video width="320" height="240" autoplay muted>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+  </video>
+
+  <div style="text-align:center">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+    <br><br>
+    <video id="video1" width="420">
+      <source src="mov_bbb.mp4" type="video/mp4">
+      <source src="mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+
+  <script>
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+      if (myVideo.paused)
+        myVideo.play();
+      else
+        myVideo.pause();
+    }
+
+    function makeBig() {
+      myVideo.width = 560;
+    }
+
+    function makeSmall() {
+      myVideo.width = 320;
+    }
+
+    function makeNormal() {
+      myVideo.width = 420;
+    } 
+  </script>
+
+  <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+  <!-- object and emmbed -->
+
+  <p id="object"><a href="#top">Jump to top</a></p>
+
+  <h2>Object</h2>
+
+  <object width="100%" height="500px" data="Project 1.html"></object>
+
+  <object data="The Greenlamd name theory.png" style="width: 75%;"></object>
+
+  <h2>Embed</h2>
+
+  <embed width="100%" height="500px" src="Project 1.html">
+
+  <embed src="The Greenlamd name theory.png" style="width: 75%;">
+
+  <!-- youtube -->
+
+  <p id="youtube video"><a href="#top">Jump to top</a></p>
+
+  <iframe width="420" height="345"
+    src="https://www.youtube.com/watch?v=cPJUBQd-PNM&list=TLPQMjcwMjIwMjPEX5VnpL3zog&index=1">
+  </iframe>
+
+  <iframe width="420" height="345"
+    src="https://www.youtube.com/watch?v=cPJUBQd-PNM&list=TLPQMjcwMjIwMjPEX5VnpL3zog&index=1autoplay=1&mute=1">
+  </iframe>
+
+  <iframe width="420" height="345"
+    src="https://www.youtube.com/watch?v=cPJUBQd-PNM&list=TLPQMjcwMjIwMjPEX5VnpL3zog&index=1loop=1">
+  </iframe>
+
+  <iframe width="420" height="345"
+    src="https://www.youtube.com/watch?v=cPJUBQd-PNM&list=TLPQMjcwMjIwMjPEX5VnpL3zog&index=1controls=0">
+  </iframe>
+
+  <!-- audio -->
+
+  <p id="audio"><a href="#top">Jump to top</a></p>
+
+  <audio controls autoplay>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio.
+  </audio>
+
+  <audio controls autoplay muted>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio.
+  </audio>
+
+  <!-- address -->
+
+  <address>
+    Written by Yash Naudiyal.<br>
+    India<br>
+    <a href="mailto:yashnaudiyal268@gmail.com">Send email here for suggestion</a>
+  </address>
+
+  <p>Count numbers: <output id="result"></output></p>
+  <button onclick="startWorker()">Start Worker</button>
+  <button onclick="stopWorker()">Stop Worker</button>
+
+  <script>
+    var w;
+
+    function startWorker() {
+      if (typeof (Worker) !== "undefined") {
+        if (typeof (w) == "undefined") {
+          w = new Worker("demo_workers.js");
+        }
+        w.onmessage = function (event) {
+          document.getElementById("result").innerHTML = event.data;
+        };
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+      }
+    }
+
+    function stopWorker() {
+      w.terminate();
+      w = undefined;
+    }
+  </script>
+
+  <h1>Getting server updates</h1>
+  <div id="result"></div>
+
+  <script>
+    if (typeof (EventSource) !== "undefined") {
+      var source = new EventSource("demo_sse.php");
+      source.onmessage = function (event) {
+        document.getElementById("result").innerHTML += event.data + "<br>";
+      };
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+    }
+  </script>
+
+</body>
+
+</html>

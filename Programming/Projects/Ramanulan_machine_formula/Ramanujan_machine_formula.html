@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add 1+2+3+4+5......n</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #maindiv {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #h1 {
+            font-size: 300%;
+            margin-bottom: 10px;
+        }
+
+        input {
+            font-size: 140%;
+            border: 3px solid tomato;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background-color: rgb(241, 248, 248);
+        }
+
+        #minmax {
+            font-size: 120%;
+            border: 2px solid tomato;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #minmax:hover {
+            background-color: rgb(123, 123, 123);
+            color: white;
+        }
+
+        #para {
+            font-size: 700%;
+        }
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+        <h1 id="h1">Add 1+2+3+4+5......n</h1>
+        <input type="number" required id="max" placeholder="Enter value of n">
+        <button id="minmax">Submit</button>
+        <p id="para"> ‎</p>
+    </div>
+    <script>
+        let max = document.getElementById("max");
+        let para = document.getElementById("para")
+        let h1 = document.getElementById("h1");
+        document.getElementById("minmax").onclick = function minmax() {
+            if (max.valueAsNumber <= 0) {
+                para.textContent = "Invalid Value";
+                h1.textContent = `Add 1+2+3+4+5......n`;
+            } else if (max.valueAsNumber <= 5) {
+                para.textContent = (max.valueAsNumber * (max.valueAsNumber + 1)) / 2;
+                h1.textContent = `Add 0+...${max.value}`;
+            } else {
+                para.textContent = (max.valueAsNumber * (max.valueAsNumber + 1)) / 2;
+                h1.textContent = `Add 1+2+3+4+5......${max.value}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Problem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            min-height: 100svh;
+        }
+
+        input {
+            border: none;
+        }
+
+        button,
+        input,
+        .row,
+        #cont {
+            border-radius: 20px !important;
+        }
+    </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+    <div id="cont" class="m-5 p-5 bg-secondary text-white">
+        <h1>Star Problem</h1>
+        <div class="row bg-white border border-warning mb-3">
+            <input type="number" id="star-text" min="1" max="12" class="col">
+            <button onclick="starFunc(inp.value);star = ''" class="col btn btn-warning fw-5">Print Stars</button>
+        </div>
+        <h2 id="star" style="height: 460px; width: 234px; overflow: hidden;"></h2>
+    </div>
+
+    <script>
+        let inp = document.getElementById("star-text");
+        let starHeading = document.getElementById("star");
+        let star = "";
+        function starFunc(stars) {
+            starHeading.textContent = ""
+            for (let index = 0; index < stars; index++) {
+                star += "*";
+                starHeading.innerHTML += `${star}<br>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

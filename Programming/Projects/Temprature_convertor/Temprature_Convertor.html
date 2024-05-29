@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature convertor</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #div h1 {
+            font-family: cursive;
+        }
+
+        #div div label {
+            font-family: sans-serif;
+        }
+
+        button {
+            margin-left: 3px;
+            border: 2px solid tomato;
+            border-radius: 5px;
+            background-color: aliceblue;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #div p {
+            font-family: cursive;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <h1>Temperature Calculator</h1><br>
+        <div>
+            <label for="checkbox">C° → °F</label> <input type="radio" name="checkbox" id="forfer" checked><br>
+            <label for="checkbox">F° → °C</label> <input type="radio" name="checkbox" id="forcel">
+        </div><br>
+        <div>
+            <input type="number" id="number"><button id="submit">Converte</button><br><br>
+        </div>
+        <p id="result">‎</p>
+    </div>
+
+    <script>
+        let forfer = document.getElementById("forfer");
+        let forcel = document.getElementById("forcel");
+        let num = document.getElementById("number");
+        let submit = document.getElementById("submit");
+        let results = document.getElementById("result");
+        let numval;
+        submit.onclick = function Converte() {
+            if (forfer.checked) {
+                numval = num.valueAsNumber * 9 / 5 + 32;
+                results.textContent = numval.toFixed("1") + "°F";
+            } else if (forcel.checked) {
+                numval = (num.valueAsNumber - 32) * (5/9);
+                results.textContent = numval.toFixed("1") + "°C";
+            } else {
+                numval = num.valueAsNumber * 9 / 5 + 32;
+                results.textContent = numval.toFixed("1") + "°F";
+            }
+        }
+    </script>
+</body>
+</html>

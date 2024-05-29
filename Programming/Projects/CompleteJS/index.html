@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F*ck Programming</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- <p id="name"></p>
+    <p id="age"></p>
+    <p id="is_student"></p>
+    <p id="degrees"></p> -->
+
+    <h1>Welcome</h1>
+    <label>Enter your name:</label><br>
+    <input type="text" id="name"><br><br>
+    <button id="submit">Submit</button>
+    <p id="NAAME"></p><br><br><br>
+
+    <div>
+        <button onclick="hire_binod()">Hire me</button>
+        <p id="hiringresult"></p>
+        <script>
+            function hire_binod() {
+
+                let aaggee = prompt('Enter your age');
+                aaggee = Number.parseInt(aaggee);
+                let hiringresult = document.getElementById("hiringresult")
+
+                if (aaggee > 18 && aaggee < 60) {
+                    confirm("we can hire you, But have you worwed before in a company???");
+                    if (confirm === !false) {
+                        hiringresult.innerHTML = ("thanks, we'll hire you soon")
+                    } else {
+                        hiringresult.innerHTML = ("thanks, we'll hire you soon")
+                    }
+                } else if (aaggee === 18 || aaggee === 60) {
+                    confirm("we can hire you, But have you worwed before in a company???");
+                    if (confirm === !false) {
+                        hiringresult.innerHTML = ("thanks, we'll hire you soon")
+                    } else {
+                        hiringresult.innerHTML = ("thanks, we'll hire you soon")
+                    }
+                } else if (aaggee < 0) {
+                    hiringresult.innerHTML = ("Invalid value");
+                } else if (aaggee < 18) {
+                    hiringresult.innerHTML = ("You are too small to be hired");
+                } else if (aaggee > 60) {
+                    hiringresult.innerHTML = ("You are too old to be hired");
+                } else {
+                    hiringresult.innerHTML = ("Invalid value");
+                }
+            }
+        </script>
+    </div>
+
+    <div>
+        <div>
+            <h1>What do you want</h1>
+            <label for="checkboxs">BMW <i style="font-weight: 900;">M<span style="color: blue;">/</span>
+                    <span style="color: red;">/</span> 3</i> <b>GTR</b></label>
+            <input type="checkbox" name="checkboxs" id="BMW"><br>
+        </div>
+
+        <div>
+            <h1>What do you want for salary</h1>
+            <label for="radio">1M (Jonior)</label>
+            <input type="radio" name="radio" id="M"><br>
+            <label for="radio">4M ()</label>
+            <input type="radio" name="radio" id="M4"><br>
+            <label for="radio">8M</label>
+            <input type="radio" name="radio" id="M8"><br>
+            <label for="radio">12M</label>
+            <input type="radio" name="radio" id="M12"><br>
+        </div>
+
+        <button id="subcrit" type="submit">bubmit</button>
+
+        <p id="forcar"></p>
+        <p id="forsalary"></p>
+
+        <script>
+            let CHUKBUX = document.getElementById("BMW");
+            let M = document.getElementById("M");
+            let M4 = document.getElementById("M4");
+            let M8 = document.getElementById("M8");
+            let M12 = document.getElementById("M12");
+            let forcar = document.getElementById("forcar");
+            let forsalary = document.getElementById("forsalary");
+            document.getElementById("subcrit").onclick = function () {
+                if (CHUKBUX.checked) {
+                    forcar.textContent = "You will get BMW M3 GTR but yor salary will cut by 90% in first year";
+                } else {
+                    forcar.textContent = "You won't get BMW M3 GTR but yor salary won't cut by 90% in first year";
+                }
+
+                //Radio
+
+                if (M.checked) {
+                    forsalary.textContent = "Your salary will be 1million";
+                } else if (M4.checked) {
+                    forsalary.textContent = "Your salary will be 4million";
+                } else if (M8.checked) {
+                    forsalary.textContent = "Your salary will be 8million";
+                } else if (M12.checked) {
+                    forsalary.textContent = "Your salary will be 12million";
+                } else {
+                    forsalary.textContent = "Your salary will be told to you in inteview";
+                }
+            }
+        </script>
+    </div>
+    
+    <button id="passsel" onclick="blah()">Select Password</button>
+
+    <a href="/Projects/CompleteJS/Advance.html">To Advance</a>
+
+</body>
+
+</html>

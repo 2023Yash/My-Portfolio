@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="learningW3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .botoma {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .botoma1 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .botoma2 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .botoma3 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .botoma4 {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        body {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: snow;
+            font-size: 100%;
+        }
+
+        .nav {
+            background-color: #383333;
+            overflow: hidden;
+            margin: 3px 5px 50px 5px;
+            border-radius: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: white;
+            font-family: cursive;
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 17px;
+            float: left;
+            display: block;
+        }
+
+        .nav img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .nav a.active {
+            background-color: #3fa168;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .mainsection {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #welcome {
+            background-color: rgba(255, 238, 0, 0.5);
+            border-left: rgb(163, 163, 0) 8px solid;
+            line-height: 50px;
+            /* opacity: 0.4; */
+            opacity: 50%;
+        }
+
+        #welcom2e {
+            background-color: rgba(255, 238, 0, 27%);
+            border-left: rgb(163, 163, 0) 8px solid;
+            line-height: 50px;
+        }
+
+        p.dotted {
+            border-style: dotted;
+        }
+
+        p.dashed {
+            border-style: dashed;
+        }
+
+        p.solid {
+            border-style: solid;
+        }
+
+        p.double {
+            border-style: double;
+        }
+
+        p.groove {
+            border-style: groove;
+        }
+
+        p.ridge {
+            border-style: ridge;
+        }
+
+        p.inset {
+            border-style: inset;
+        }
+
+        p.outset {
+            border-style: outset;
+        }
+
+        p.none {
+            border-style: none;
+        }
+
+        p.hidden {
+            border-style: hidden;
+        }
+
+        p.mix {
+            border-style: dotted dashed solid double;
+        }
+
+        p.one {
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        p.two {
+            border-style: solid;
+            border-width: medium;
+        }
+
+        p.three {
+            border-style: dotted;
+            border-width: 2px;
+        }
+
+        p.four {
+            border-style: dotted;
+            border-width: thick;
+        }
+
+        p.five {
+            border-style: double;
+            border-width: 15px;
+        }
+
+        p.six {
+            border-style: double;
+            border-width: thick;
+        }
+
+        p.one1 {
+            border-style: solid;
+            border-width: 5px 20px;
+        }
+
+        p.two2 {
+            border-style: solid;
+            border-width: 20px 5px;
+        }
+
+        p.three3 {
+            border-style: solid;
+            border-width: 25px 10px 4px 35px;
+        }
+
+        p.ex1 {
+            margin-left: inherit;
+        }
+
+        p {
+            outline-color: red;
+        }
+
+        p.dotted111 {
+            outline-style: dotted;
+        }
+
+        p.dashed111 {
+            outline-style: dashed;
+        }
+
+        p.solid111 {
+            outline-style: solid;
+        }
+
+        p.double111 {
+            outline-style: double;
+        }
+
+        p.groove111 {
+            outline-style: groove;
+        }
+
+        p.ridge111 {
+            outline-style: ridge;
+        }
+
+        p.inset111 {
+            outline-style: inset;
+        }
+
+        p.outset111 {
+            outline-style: outset;
+        }
+
+        p.ex111 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: thin;
+        }
+
+        p.ex2 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: medium;
+        }
+
+        p.ex3 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: thick;
+        }
+
+        p.ex4 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: 4px;
+        }
+
+        .pppp {
+            margin: 30px;
+            background: yellow;
+            border: 1px solid black;
+            outline: 1px solid red;
+            outline-offset: 15px;
+        }
+
+        .dddiiivvv {
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            text-align: justify;
+        }
+
+        p.ex10101001 {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+
+        img.aba {
+            vertical-align: baseline;
+        }
+
+        img.bab {
+            vertical-align: text-top;
+        }
+
+        img.cbc {
+            vertical-align: text-bottom;
+        }
+
+        img.dcd {
+            vertical-align: sub;
+        }
+
+        img.ede {
+            vertical-align: super;
+        }
+
+        .dipstibdi {
+            text-decoration: overline;
+        }
+
+        .brrrrrrstibididododododoyesyesyesyes {
+            text-decoration: line-through;
+        }
+
+        .ex1234567890 {
+            text-decoration: overline underline;
+        }
+
+        h4 {
+            text-decoration-line: overline;
+            text-decoration-color: red;
+        }
+
+        h5 {
+            text-decoration-line: line-through;
+            text-decoration-color: blue;
+        }
+
+        h6 {
+            text-decoration-line: underline;
+            text-decoration-color: green;
+        }
+
+        q {
+            text-decoration-line: overline underline;
+            text-decoration-color: purple;
+        }
+
+        .h1tututututututututututututut {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            /* this is default */
+        }
+
+        .h2tututututututututututututut {
+            text-decoration-line: underline;
+            text-decoration-style: double;
+        }
+
+        .h3tututututututututututututut {
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+        }
+
+        p.ex1tututututututuutututuutututu {
+            text-decoration-line: underline;
+            text-decoration-style: dashed;
+        }
+
+        p.ex2tututututututuutututuutututu {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+        }
+
+        p.ex3tututututututuutututuutututu {
+            text-decoration-line: underline;
+            text-decoration-color: red;
+            text-decoration-style: wavy;
+        }
+
+        .h1aaaaaaaa {
+            text-decoration: underline;
+        }
+
+        .h2aaaaaaaa {
+            text-decoration: underline red;
+        }
+
+        .h3aaaaaaaa {
+            text-decoration: underline red double;
+        }
+
+        .paaaaaaaa {
+            text-decoration: underline red double 5px;
+        }
+
+        p.uppercase {
+            text-transform: uppercase;
+        }
+
+        p.lowercase {
+            text-transform: lowercase;
+        }
+
+        p.capitalize {
+            text-transform: capitalize;
+        }
+
+        i {
+            text-indent: 50px;
+        }
+
+        article {
+            letter-spacing: 5px;
+        }
+
+        del {
+            letter-spacing: -2px;
+        }
+
+        p.oneO {
+            word-spacing: 10px;
+        }
+
+        p.twoO {
+            word-spacing: -2px;
+        }
+
+        p.lmnop {
+            white-space: nowrap;
+        }
+
+        .texxt {
+            text-shadow: 2px 2px;
+            font-size: 2.5em;
+        }
+
+        .texxt1 {
+            text-shadow: 2px 2px red;
+            font-size: 2.5em;
+        }
+
+        .texxt2 {
+            text-shadow: 2px 2px 5px red;
+            font-size: 2.5em;
+        }
+
+        .texxt3 {
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            font-size: 2.5em;
+        }
+
+        .texxt4 {
+            text-shadow: 0 0 3px #FF0000;
+            font-size: 2.5em;
+        }
+
+        .texxt5 {
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+            font-size: 2.5em;
+        }
+
+        .texxt6 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            font-size: 2.5em;
+        }
+
+        .sofia {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px #ababab;
+        }
+
+        .sofia2 {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+        }
+
+        abbr {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+        }
+
+        /* a:hover MUST come after a:link and a:visited a:active MUST come after a:hover */
+
+        .link a:link {
+            color: red;
+        }
+
+        .link a:visited {
+            color: green;
+        }
+
+        .link a:hover {
+            color: hotpink;
+        }
+
+        .link a:active {
+            color: blue;
+        }
+
+        ul.ahaaaaahaaaaahaaaahaaa {
+            list-style-type: circle;
+        }
+
+        ul.bhaaaaahaaaaahaaaahaaa {
+            list-style-type: square;
+        }
+
+        ol.chaaaaahaaaaahaaaahaaa {
+            list-style-type: upper-roman;
+        }
+
+        ol.dhaaaaahaaaaahaaaahaaa {
+            list-style-type: lower-alpha;
+        }
+
+        #ulkiid ul {
+            list-style-image: url('https://www.w3schools.com/css/sqpurple.gif');
+            list-style: square inside url("sqpurple.gif");
+        }
+
+        ul.a {
+            list-style-type: circle;
+        }
+
+        ul.b {
+            list-style-type: disc;
+        }
+
+        ul.c {
+            list-style-type: square;
+        }
+
+        ol.d {
+            list-style-type: armenian;
+        }
+
+        ol.e {
+            list-style-type: cjk-ideographic;
+        }
+
+        ol.f {
+            list-style-type: decimal;
+        }
+
+        ol.g {
+            list-style-type: decimal-leading-zero;
+        }
+
+        ol.h {
+            list-style-type: georgian;
+        }
+
+        ol.i {
+            list-style-type: hebrew;
+        }
+
+        ol.j {
+            list-style-type: hiragana;
+        }
+
+        ol.k {
+            list-style-type: hiragana-iroha;
+        }
+
+        ol.l {
+            list-style-type: katakana;
+        }
+
+        ol.m {
+            list-style-type: katakana-iroha;
+        }
+
+        ol.n {
+            list-style-type: lower-alpha;
+        }
+
+        ol.o {
+            list-style-type: lower-greek;
+        }
+
+        ol.p {
+            list-style-type: lower-latin;
+        }
+
+        ol.q {
+            list-style-type: lower-roman;
+        }
+
+        ol.r {
+            list-style-type: upper-alpha;
+        }
+
+        ol.s {
+            list-style-type: upper-latin;
+        }
+
+        ol.t {
+            list-style-type: upper-roman;
+        }
+
+        ol.u {
+            list-style-type: none;
+        }
+
+        ol.v {
+            list-style-type: inherit;
+        }
+
+        ul.avavavavvavavavavvavva {
+            list-style-position: outside;
+        }
+
+        ul.bvavavavvavavavavvavva {
+            list-style-position: inside;
+        }
+
+        ul {
+            list-style-position: inside;
+        }
+
+        ul.demolol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: right;
+            padding: 8px;
+        }
+
+        tr:hover {
+            background-color: rgb(255, 123, 0);
+        }
+
+        .iimmgg {
+            position: absolute;
+            clip: rect(0px, 60px, 200px, 0px);
+        }
+
+        .diivur {
+            background-color: rgb(255, 68, 0);
+            width: 200px;
+            height: 65px;
+            border: 1px solid;
+            overflow: visible;
+            display: inline-block;
+        }
+
+        #diivur {
+            background-color: rgb(255, 68, 0);
+            width: 200px;
+            height: 65px;
+            border: 1px solid;
+            overflow: hidden;
+            display: inline-block;
+            display: block;
+        }
+
+        #diivurr {
+            background-color: rgb(255, 68, 0);
+            width: 200px;
+            height: 65px;
+            border: 1px solid;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        #diivuurr {
+            background-color: rgb(255, 68, 0);
+            width: 200px;
+            height: 65px;
+            border: 1px solid;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <nav>
+            <a href="learning.html"><img src="cube lube.jpg" alt="logo"></a>
+            <a class="active" href="learningW3.html">CSS1</a>
+            <a href="CSS3.html">CSS2</a>
+            <a href="CSS.html">CSS3</a>
+            <a style="float: right;" href="learning.html">Go Back</a>
+        </nav>
+    </div>
+
+    <div>
+        <section class="mainsection">
+            <h1 id="welcome">WELCOME TO W3CSS</h1>
+            <h1 id="welcom2e">WELCOME TO W3CSS</h1>
+
+            <h1 class="botoma">CSS BORDER PROPERTY</h1>
+
+            <p class="dotted">A dotted border.</p>
+            <p class="dashed">A dashed border.</p>
+            <p class="solid">A solid border.</p>
+            <p class="double">A double border.</p>
+            <p class="groove">A groove border.</p>
+            <p class="ridge">A ridge border.</p>
+            <p class="inset">An inset border.</p>
+            <p class="outset">An outset border.</p>
+            <p class="none">No border.</p>
+            <p class="hidden">A hidden border.</p>
+            <p class="mix">A mixed border.</p>
+
+            <h1 class="botoma">CSS BORDER PROPERTY PART2</h1>
+
+            <p class="one">Some text.</p>
+            <p class="two">Some text.</p>
+            <p class="three">Some text.</p>
+            <p class="four">Some text.</p>
+            <p class="five">Some text.</p>
+            <p class="six">Some text.</p>
+
+            <h1 class="botoma">CSS BORDER PROPERTY PART3</h1>
+
+            <p class="one1 botoma2">Some text.</p>
+            <p class="two2 botoma2">Some text.</p>
+            <p class="three3 botoma2">Some text.</p>
+
+            <h1 class="botoma">CSS BORDER PROPERTY PART4</h1>
+
+            <div>
+                <p class="ex1">This a paragraph.</p>
+            </div>
+
+            <h1 class="botoma">CSS outline-style Property</h1>
+
+            <p class="dotted111">A dotted outline</p>
+            <p class="dashed111">A dashed outline</p>
+            <p class="solid111">A solid outline</p>
+            <p class="double111">A double outline</p>
+            <p class="groove111">A groove outline. The effect depends on the outline-color value.</p>
+            <p class="ridge111">A ridge outline. The effect depends on the outline-color value.</p>
+            <p class="inset111">An inset outline. The effect depends on the outline-color value.</p>
+            <p class="outset111">An outset outline. The effect depends on the outline-color value.</p>
+
+            <h1 class="botoma">CSS outline-width Property</h1>
+
+            <p class="ex111">A thin outline.</p>
+            <p class="ex2">A medium outline.</p>
+            <p class="ex3">A thick outline.</p>
+            <p class="ex4">A 4px thick outline.</p>
+
+            <h1 class="botoma">CSS outline-offset Property</h1>
+
+            <p class="pppp">This paragraph has an outline of 15px outside the border edge.</p>
+
+            <h1 class="botoma">CSS Text</h1>
+
+            <div style="border: #383333 1px solid;">
+                <h1
+                    style="text-align: center; color: yellowgreen; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 20px;">
+                    Text</h1>
+                <p style="text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit. Modi beatae quis labore consectetur architecto eligendi
+                    quibusdam similique explicabo cupiditate aliquid nihil perspiciatis ducimus saepe nesciunt illo
+                    illum facere laudantium vero, accusamus quisquam quod perferendis obcaecati veritatis. Eveniet
+                    aperiam blanditiis dolore consequuntur numquam natus obcaecati magnam? Saepe <a href="#"
+                        style="color: lightskyblue; text-decoration: none;">CLick!</a> placeat iste error
+                    dicta!
+                </p><br>
+
+                <p>When the text-align property is set to "justify", each line is stretched so that every line has equal
+                    width, and the left and right margins are straight (like in magazines and newspapers):</p>
+            </div>
+
+            <h1 class="botoma">CSS Text text-align Property</h1>
+
+            <p style="text-align: left; background-color: red; color: white;">Text Align - left</p>
+            <p style="text-align: center; background-color: green; color: white;">Text Align - center</p>
+            <p style="text-align: right; background-color: blue; color: white;">Text Align - right</p>
+
+            <div class="dddiiivvv botoma3">
+                In my younger and more vulnerable years my father gave me some advice that I've been turning over in my
+                mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the
+                people in this world haven't had the advantages that you've had.'
+            </div>
+
+            <p class="botoma" style="background-color: red; color: white;">This is the default text direction.</p>
+
+            <p class="ex10101001" style="background-color: green; color: white;">This is right-to-left text direction.
+            </p>
+
+            <h1 class="botoma">The vertical-align Property</h1>
+
+            <h2>vertical-align: baseline (default):</h2>
+            <p>An <img class="aba" src="https://www.w3schools.com/css/sqpurple.gif" width="9" height="9"> image with a
+                default alignment.</p>
+
+            <h2>vertical-align: text-top:</h2>
+            <p>An <img class="bab" src="https://www.w3schools.com/css/sqpurple.gif" width="9" height="9"> image with a
+                text-top alignment.</p>
+
+            <h2>vertical-align: text-bottom:</h2>
+            <p>An <img class="cbc" src="https://www.w3schools.com/css/sqpurple.gif" width="9" height="9"> image with a
+                text-bottom alignment.</p>
+
+            <h2>vertical-align: sub:</h2>
+            <p>An <img class="dcd" src="https://www.w3schools.com/css/sqpurple.gif" width="9" height="9"> image with a
+                sub alignment.</p>
+
+            <h2>vertical-align: sup:</h2>
+            <p>An <img class="ede" src="https://www.w3schools.com/css/sqpurple.gif" width="9" height="9"> image with a
+                super alignment.</p>
+
+            <h1 class="botoma">CSS text text-decoration property</h1>
+
+            <p class="dipstibdi">Overline text decoration</p>
+            <p class="brrrrrrstibididododododoyesyesyesyes">Line-through text decoration</p>
+            <p class="ex1234567890">Overline and underline text decoration.</p>
+
+            <h4 class="botoma3">Overline text decoration</h4>
+            <h5>Line-through text decoration</h5>
+            <h6>Underline text decoration</h6>
+            <q>Overline and underline text decoration.</q>
+
+            <h1 class="h1tututututututututututututut botoma2">Heading 1</h1>
+            <h2 class="h2tututututututututututututut">Heading 2</h2>
+            <h3 class="h3tututututututututututututut">Heading 3</h3>
+            <p class="ex1tututututututuutututuutututu">A paragraph.</p>
+            <p class="ex2tututututututuutututuutututu">Another paragraph.</p>
+            <p class="ex3tututututututuutututuutututu">Another paragraph.</p>
+
+            <h1 class="h1aaaaaaaa botoma2">Heading 1</h1>
+            <h2 class="h2aaaaaaaa">Heading 2</h2>
+            <h3 class="h3aaaaaaaa">Heading 3</h3>
+            <p class="paaaaaaaa">A paragraph.</p>
+
+            <p class="uppercase botoma2">This text is transformed to uppercase.</p>
+            <p class="lowercase">This text is transformed to lowercase.</p>
+            <p class="capitalize">This text is capitalized.</p>
+
+            <i class="botoma">In my younger and more vulnerable years my father gave me some advice that I've been
+                turning over in my
+                mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the
+                people in this world haven't had the advantages that you've had.'</i>
+
+            <article class="botoma">This is heading 1</article>
+            <del>This is heading 2</del>
+
+            <p class="oneO botoma2">This is a paragraph with larger word spacing.</p>
+
+            <p class="twoO botoma2">This is a paragraph with smaller word spacing.</p>
+
+            <p class="lmnop">
+                This is some text that will not wrap.
+                This is some text that will not wrap.
+                This is some text that will not wrap.
+                This is some text that will not wrap.
+                This is some text that will not wrap.
+            </p>
+
+            <h1>CSS Text shadow property</h1>
+
+            <h1 class="texxt botoma">Text-shadow effect!</h1>
+
+            <h1 class="texxt1">Text-shadow effect!</h1>
+
+            <h1 class="texxt2">Text-shadow effect!</h1>
+
+            <h1 class="texxt3">Text-shadow effect!</h1>
+
+            <h1 class="texxt4">Text-shadow with red neon glow!</h1>
+
+            <h1 class="texxt5">Text-shadow with red and blue neon glow!</h1>
+
+            <h1 class="texxt6">Text-shadow effect!</h1>
+
+            <h1 class="botoma">CSS font-variant property</h1>
+
+            <h1 class="sofia">Sofia</h1>
+
+            <h1 class="sofia font-effect-fire">Sofia</h1>
+
+            <abbr class="font-effect-neon">Neon Effect</abbr>
+            <abbr class="font-effect-outline">Outline Effect</abbr>
+            <abbr class="font-effect-emboss">Emboss Effect</abbr>
+            <abbr class="font-effect-shadow-multiple">Multiple Shadow Effect</abbr>
+
+            <h1>Bootstrap icon library</h1>
+
+            <p>Some Bootstrap icons:</p>
+            <i class="glyphicon glyphicon-cloud"></i>
+            <i class="glyphicon glyphicon-remove"></i>
+            <i class="glyphicon glyphicon-user"></i>
+            <i class="glyphicon glyphicon-envelope"></i>
+            <i class="glyphicon glyphicon-thumbs-up"></i>
+            <br><br>
+
+            <p>Styled Bootstrap icons (size and color):</p>
+            <i class="glyphicon glyphicon-cloud" style="font-size:24px;"></i>
+            <i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i>
+            <i class="glyphicon glyphicon-cloud" style="font-size:48px;color:red;"></i>
+            <i class="glyphicon glyphicon-cloud" style="font-size:60px;color:lightblue;"></i>
+
+            <h1>Google icon library</h1>
+
+            <p>Some Google icons:</p>
+            <i class="material-icons">cloud</i>
+            <i class="material-icons">favorite</i>
+            <i class="material-icons">attachment</i>
+            <i class="material-icons">computer</i>
+            <i class="material-icons">traffic</i>
+            <br><br>
+
+            <p>Styled Google icons (size and color):</p>
+            <i class="material-icons" style="font-size:24px;">cloud</i>
+            <i class="material-icons" style="font-size:36px;">cloud</i>
+            <i class="material-icons" style="font-size:48px;color:red;">cloud</i>
+            <i class="material-icons" style="font-size:60px;color:lightblue;">cloud</i>
+
+            <div class="link">
+
+                <p><b><a href="https://www.youtube.com/" target="_blank">This is a link</a></b></p>
+
+            </div>
+
+            <p>Mouse over the words to change the cursor.</p>
+            <span style="cursor:auto">auto</span><br>
+            <span style="cursor:crosshair">crosshair</span><br>
+            <span style="cursor:default">default</span><br>
+            <span style="cursor:e-resize">e-resize</span><br>
+            <span style="cursor:help">help</span><br>
+            <span style="cursor:move">move</span><br>
+            <span style="cursor:n-resize">n-resize</span><br>
+            <span style="cursor:ne-resize">ne-resize</span><br>
+            <span style="cursor:nw-resize">nw-resize</span><br>
+            <span style="cursor:pointer">pointer</span><br>
+            <span style="cursor:progress">progress</span><br>
+            <span style="cursor:s-resize">s-resize</span><br>
+            <span style="cursor:se-resize">se-resize</span><br>
+            <span style="cursor:sw-resize">sw-resize</span><br>
+            <span style="cursor:text">text</span><br>
+            <span style="cursor:w-resize">w-resize</span><br>
+            <span style="cursor:wait">wait</span><br>
+
+            <h2>CSS list-style-type Property</h2>
+
+            <ul class="ahaaaaahaaaaahaaaahaaa">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <ul class="bhaaaaahaaaaahaaaahaaa">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <p>Example of ordered lists:</p>
+            <ol class="chaaaaahaaaaahaaaahaaa">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="dhaaaaahaaaaahaaaahaaa">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ul id=ulkiid>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <h2>All List Style Types</h2>
+
+            <ul class="a">
+                <li>Circle type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <ul class="b">
+                <li>Disc type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <ul class="c">
+                <li>Square type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <ol class="d">
+                <li>Armenian type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="e">
+                <li>Cjk-ideographic type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="f">
+                <li>Decimal type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="g">
+                <li>Decimal-leading-zero type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="h">
+                <li>Georgian type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="i">
+                <li>Hebrew type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="j">
+                <li>Hiragana type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="k">
+                <li>Hiragana-iroha type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="l">
+                <li>Katakana type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="m">
+                <li>Katakana-iroha type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="n">
+                <li>Lower-alpha type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="o">
+                <li>Lower-greek type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="p">
+                <li>Lower-latin type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="q">
+                <li>Lower-roman type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="r">
+                <li>Upper-alpha type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="s">
+                <li>Upper-latin type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="t">
+                <li>Upper-roman type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="u">
+                <li>None type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="v">
+                <li>inherit type</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <h2>list-style-position: outside (default):</h2>
+            <ul class="avavavavvavavavavvavva">
+                <li>Coffee - A brewed drink prepared from roasted coffee beans, which are the seeds of berries from the
+                    Coffea plant</li>
+                <li>Tea - An aromatic beverage commonly prepared by pouring hot or boiling water over cured leaves of
+                    the Camellia sinensis, an evergreen shrub (bush) native to Asia</li>
+                <li>Coca Cola - A carbonated soft drink produced by The Coca-Cola Company. The drink's name refers to
+                    two of its original ingredients, which were kola nuts (a source of caffeine) and coca leaves</li>
+            </ul>
+
+            <h2>list-style-position: inside:</h2>
+            <ul class="bvavavavvavavavavvavva">
+                <li>Coffee - A brewed drink prepared from roasted coffee beans, which are the seeds of berries from the
+                    Coffea plant</li>
+                <li>Tea - An aromatic beverage commonly prepared by pouring hot or boiling water over cured leaves of
+                    the Camellia sinensis, an evergreen shrub (bush) native to Asia</li>
+                <li>Coca Cola - A carbonated soft drink produced by The Coca-Cola Company. The drink's name refers to
+                    two of its original ingredients, which were kola nuts (a source of caffeine) and coca leaves</li>
+            </ul>
+
+            <ul class="demolol">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <div style="overflow-x: auto; border: black 2px solid; border-collapse: collapse; width: 100%;">
+                <table>
+                    <tr>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">First Name</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Last Name</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                        <th style="border: 2px solid; padding: 10px; height: 100px;">Points</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid; padding: 10px;">Jill</td>
+                        <td style="border: 2px solid; padding: 10px;">Smith</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                        <td style="border: 2px solid; padding: 10px;">50</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid; padding: 10px;">Eve</td>
+                        <td style="border: 2px solid; padding: 10px;">Jackson</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                        <td style="border: 2px solid; padding: 10px;">94</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid; padding: 10px;">Adam</td>
+                        <td style="border: 2px solid; padding: 10px;">Johnson</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                        <td style="border: 2px solid; padding: 10px;">67</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="overflow-x: auto; border: black 2px solid; border-collapse: collapse; width: 100%;">
+                <table>
+                    <tr style="border-bottom: black 1px solid;">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr style="border-bottom: black 1px solid;">
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                    </tr>
+                    <tr style="border-bottom: black 1px solid;">
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                    </tr>
+                    <tr style="border-bottom: black 1px solid;">
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                    </tr>
+                </table>
+            </div>
+
+            <img class="iimmgg" src="https://www.w3schools.com/css/w3css.gif" width="100" height="140">
+
+            <div class="diivur">You can use the overflow property when you want to have better control of the layout.
+                The overflow
+                property specifies what happens if content overflows an element's box. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Nostrum dolores placeat non, quod dolorem, aspernatur itaque, corporis
+                ullam harum rerum deserunt aliquam distinctio sint? Quam maxime harum unde praesentium? Placeat.</div>
+
+            <div id="diivur">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ad minus ducimus! Eius, iure sapiente
+                earum labore illo, corporis necessitatibus praesentium fuga amet laborum architecto esse itaque
+                inventore pariatur eligendi. Explicabo dolorem unde aperiam qui, temporibus sequi quasi, debitis
+                aliquid, harum consequuntur alias?
+            </div>
+
+            <div id="diivurr">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ad minus ducimus! Eius, iure sapiente
+                earum labore illo, corporis necessitatibus praesentium fuga amet laborum architecto esse itaque
+                inventore pariatur eligendi. Explicabo dolorem unde aperiam qui, temporibus sequi quasi, debitis
+                aliquid, harum consequuntur alias?
+            </div>
+
+            <div id="diivuurr">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ad minus ducimus! Eius, iure sapiente
+                earum labore illo, corporis necessitatibus praesentium fuga amet laborum architecto esse itaque
+                inventore pariatur eligendi. Explicabo dolorem unde aperiam qui, temporibus sequi quasi, debitis
+                aliquid, harum consequuntur alias?
+            </div>
+
+        </section>
+    </div>
+
+</body>
+
+</html>

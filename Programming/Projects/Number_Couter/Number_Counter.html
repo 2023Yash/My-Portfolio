@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number counter</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #main_div {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: auto;
+            height: 100vh;
+        }
+
+        .btn {
+            font-size: 20px;
+            background-color: tomato;
+            color: white;
+            border: 0px;
+            border-radius: 5px;
+            padding: 3px;
+            width: 65px;
+        }
+
+        .btn:hover {
+            background-color: rgb(255, 136, 114);
+            cursor: pointer;
+        }
+
+        #heading {
+            font-family: cursive;
+        }
+
+        #number {
+            font-size: 3em;
+            text-align: center;
+            margin: 10px 10px;
+        }
+    </style>
+    <script>
+        function add() {
+            document.getElementById("number").value++
+        }
+
+        function sub() {
+            document.getElementById("number").value--
+        }
+
+        function reset() {
+            document.getElementById("number").value = 0
+        }
+    </script>
+</head>
+<body>
+
+    <div id="main_div">
+        <h1 id="heading">Number counter</h1>
+        <input type="number" disabled value="0" id="number">
+        <div>
+            <button class="btn" id="add" onclick="add()">+1</button>
+            <button class="btn" id="sub" onclick="sub()">-1</button>
+            <button class="btn" id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Guessing</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(202, 255, 255, 0.475);
+        }
+
+        #maindiv {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #h1 {
+            font-family: fantasy;
+            font-size: 300%;
+            margin-bottom: 10px;
+        }
+
+        #input input {
+            font-size: 140%;
+            border: 3px solid tomato;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background-color: rgb(241, 248, 248);
+            width: 250px;
+        }
+
+        #minmax {
+            font-size: 120%;
+            border: 2px solid tomato;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #minmax:hover {
+            background-color: rgb(123, 123, 123);
+            color: white;
+        }
+
+        #para {
+            font-size: 300%;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+        <h1 id="h1">Random Number Guessing Game</h1>
+        <div id="input">
+            <input type="number" required id="mini" placeholder="Guess the number" min="1" max="100">
+            <button id="minmax">Submit</button>
+        </div>
+        <p id="para">‎</p>
+    </div>
+    <script>
+        let mini;
+        let max = 100;
+        let min;
+        let minmax = document.getElementById('minmax');
+        let rn;
+        minmax.onclick = function minmax() {
+            mini = document.getElementById("mini").valueAsNumber;
+            rn = Math.floor(Math.random() * 10) + 1;
+            if (mini !== rn) {
+                document.getElementById("para").innerHTML = "You guessed the wrong number. The number was " + rn;
+            } else {
+                document.getElementById("para").innerHTML = "You guessed the right number. The number was " + rn;
+            }
+        }
+    </script>
+</body>
+</html>
