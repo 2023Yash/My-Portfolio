@@ -29,9 +29,21 @@ nav h1 {
   margin-inline: 5px;
 }
 
+#follow {
+  display: none !important;
+}
+
 @media only screen and (max-width: 800px) {
   main .col:has(img) {
     display: none;
+  }
+  
+  #follow {
+    display: inline !important;
+  }
+
+  #a-follow {
+    display: none !important;
   }
 }
 
@@ -128,7 +140,7 @@ main::before {
   z-index: -100;
 }
 
-#follow::after {
+.follow::after {
   content: "";
   background: gold;
   width: 10%;
