@@ -1,5 +1,6 @@
 * {
-  color: white
+  color: white;
+  margin: 0;
 }
 
 html {
@@ -15,7 +16,7 @@ body {
 }
 
 .col h1 span,
-nav h1 {
+nav h1, .typed-text {
   font-family: "Alfa Slab One", serif;
   color: gold;
   font-size: 70px;
@@ -276,13 +277,17 @@ main::before {
   }
 }
 
-footer div::before,
+footer div a {
+  position: absolute;
+  left: 50%;
+}
+
 footer div::after {
   content: "";
   background: gold;
   display: inline-block;
   height: 3px;
-  width: 35%;
+  width: 75%;
 }
 
 footer p::before {
