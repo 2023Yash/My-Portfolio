@@ -1,6 +1,5 @@
 * {
-  color: white;
-  margin: 0;
+  color: white
 }
 
 html {
@@ -16,7 +15,7 @@ body {
 }
 
 .col h1 span,
-nav h1, .typed-text {
+nav h1 {
   font-family: "Alfa Slab One", serif;
   color: gold;
   font-size: 70px;
@@ -33,10 +32,6 @@ nav h1, .typed-text {
 @media only screen and (max-width: 800px) {
   main .col:has(img) {
     display: none;
-  }
-
-  .follow {
-    display: none !important;
   }
 }
 
@@ -84,22 +79,16 @@ main::before {
 }
 
 @keyframes glow {
-  from, to {
+  from {
     filter: blur(100px);
   }
 
-  12.5%, 87.5% {
-    filter: blur(95px);
-  }
-
-  25%, 75% {
-    filter: blur(90px);
-  }
-
-  37.5%, 62.5% {}
-
   50% {
     filter: blur(80px);
+  }
+
+  to {
+    filter: blur(100px);
   }
 }
 
@@ -133,7 +122,7 @@ main::before {
   z-index: -100;
 }
 
-.follow::after {
+#follow::after {
   content: "";
   background: gold;
   width: 10%;
@@ -271,23 +260,13 @@ main::before {
   animation: glow2 3s infinite;
 }
 
-@media only screen and (max-width: 991px) {
-  #iframe-col {
-    display: none !important;
-  }
-}
-
-footer div a {
-  position: absolute;
-  left: 50%;
-}
-
+footer div::before,
 footer div::after {
   content: "";
   background: gold;
   display: inline-block;
   height: 3px;
-  width: 75%;
+  width: 35%;
 }
 
 footer p::before {
@@ -317,6 +296,6 @@ footer p::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(red, rgb(128, 0, 0), red, rgb(128, 0, 0), red, rgb(128, 0, 0), red, rgb(128, 0, 0), red, rgb(128, 0, 0), red);
+  background: rgb(220, 53, 69);
   border-radius: 10px;
 }

@@ -11,7 +11,13 @@ window.onpointermove = event => {
 
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
-const textArray = [" Programmer", " Cuber", " Artist", " Gamer"];
+const textArray = [
+" Linux Enthusiast",
+" Fine Artist",
+" Minecraft Engineer",
+" Problem Solver",
+" Perfectionist",
+];
 const typingDelay = 200;
 const erasingDelay = 100;
 const newTextDelay = 2000;
