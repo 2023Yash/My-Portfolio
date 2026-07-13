@@ -122,7 +122,7 @@ main::before {
   z-index: -100;
 }
 
-#follow::after {
+.follow::after {
   content: "";
   background: gold;
   width: 10%;
@@ -260,6 +260,19 @@ main::before {
   animation: glow2 3s infinite;
 }
 
+#my-work::before {
+  content: "";
+  background-color: rgba(255, 157, 0, 0.4);
+  display: inline-block;
+  height: 500px;
+  width: 200px;
+  position: absolute;
+  z-index: -100;
+  top: 300%;
+  left: 10%;
+  animation: glow 2s infinite;
+}
+
 footer div::before,
 footer div::after {
   content: "";
@@ -267,6 +280,19 @@ footer div::after {
   display: inline-block;
   height: 3px;
   width: 35%;
+}
+
+footer::before {
+  content: "";
+  background-color: rgba(223, 182, 219, 0.551);
+  display: inline-block;
+  height: 300px;
+  width: 500px;
+  position: absolute;
+  z-index: -100;
+  top: 400%;
+  left: 30%;
+  animation: glow 2s infinite;
 }
 
 footer p::before, blockquote::before {

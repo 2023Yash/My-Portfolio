@@ -55,35 +55,101 @@
   }
   </script>
   <style>
-    main {
-        padding: 20px;
+    /* main {
+        padding-block: 100px;
+        padding-inline: 20px;
+        display: flex;
+        flex-wrap: wrap;
     }
     main img {
-        width: 100%;
-        padding-block: 100px;
+        width: 30dvh;
+    } */
+
+.gallery{
+    width: min(1400px, 95%);
+    margin: 60px auto;
+
+    column-count: 4;
+    column-gap: 18px;
+}
+
+.gallery-item{
+    break-inside: avoid;
+    margin-bottom: 18px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #212029;
+    border: 2px solid transparent;
+    transition: .35s;
+}
+
+.gallery-item img{
+    width: 100%;
+    display: block;
+    transition: .5s;
+}
+
+.gallery-item:hover{
+    transform: translateY(-6px);
+    border-color: gold;
+    box-shadow: 0 18px 35px rgba(0,0,0,.35);
+}
+
+.gallery-item:hover img{
+    transform: scale(1.05);
+}
+
+@media (max-width:1200px){
+    .gallery{
+        column-count:3;
     }
+}
+
+@media (max-width:768px){
+    .gallery{
+        column-count:2;
+    }
+}
+
+@media (max-width:500px){
+    .gallery{
+        column-count:1;
+    }
+}
+
+.gallery-item:nth-child(odd){
+    transform: rotate(-0.7deg);
+}
+
+.gallery-item:nth-child(even){
+    transform: rotate(0.7deg);
+}
+
+.gallery-item:hover{
+    transform: rotate(0deg) scale(1.02);
+}
   </style>
 </head>
 <body>
-      <header class="fixed-top" style="background-color: #2d2c3870;">
+  <header class="fixed-top" style="background-color: #2d2c3870;">
     <nav class="d-flex justify-content-around align-items-center p-3">
       <h1 style="font-size: 30px;" class="m-0">Yash</h1>
 
       <div id="xl-links">
-        <a class="text-white" href="#home">Home</span></a>
-        <a class="text-white" href="#about">About Me</a>
-        <a class="text-white" href="#my-skills">Skills</a>
-        <a class="text-white" href="#my-work">My Work</a>
+        <a class="text-white" href="index.html#home">Home</span></a>
+        <a class="text-white" href="index.html#about">About Me</a>
+        <a class="text-white" href="index.html#my-skills">Skills</a>
+        <a class="text-white" href="index.html#my-work">My Work</a>
       </div>
 
       <div class="dropdown" id="sm-links">
         <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">Links</button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#home">Home</a></li>
-          <li><a class="dropdown-item" href="#about">About Me</a></li>
-          <li><a class="dropdown-item" href="#my-skills">Skills</a></li>
-          <li><a class="dropdown-item" href="#my-work">My Work</a></li>
+          <li><a class="dropdown-item" href="index.html#home">Home</a></li>
+          <li><a class="dropdown-item" href="index.html#about">About Me</a></li>
+          <li><a class="dropdown-item" href="index.html#my-skills">Skills</a></li>
+          <li><a class="dropdown-item" href="index.html#my-work">My Work</a></li>
         </ul>
       </div>
 
@@ -91,7 +157,7 @@
         <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">More</button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#contact">Contact Me</a></li>
+          <li><a class="dropdown-item" href="index.html#contact">Contact Me</a></li>
           <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
         </ul>
       </div>
@@ -99,17 +165,48 @@
   </header>
 
   <main>
-    <img src="assets/Images/Art work/Coexistence.jpeg" alt="">
-    <img src="assets/Images/Art work/Dream Kitchen.jpeg" alt="">
-    <img src="assets/Images/Art work/Dream Living Room.jpeg" alt="">
-    <img src="assets/Images/Art work/Dream Office.jpeg" alt="">
-    <img src="assets/Images/Art work/girl.jpeg" alt="">
-    <img src="assets/Images/Art work/Jeep Offrading.jpeg" alt="">
-    <img src="assets/Images/Art work/Steam Engine.jpeg" alt="">
-    <img src="assets/Images/Art work/Villa.jpeg" alt="">
+    <section id="my-work" style="margin:160px 0;">
+
+    <h1 style="font-size:50px;" class="text-center">My Work</h1>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Coexistence.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Dream Living Room.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Dream Kitchen.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Dream Office.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/girl.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Jeep Offrading.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Steam Engine.jpeg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/Images/Art work/Villa.jpeg" alt="">
+        </div>
+
+</section>
   </main>
 
-    <footer>
+  <footer>
     <div class="text-center">
       <a href="https://www.youtube.com/@ProGamerz99-pro" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="2%" fill="red" class="bi bi-youtube" viewBox="0 0 16 16">
@@ -138,6 +235,9 @@
     </div>
 
     <p class="h1 text-center p-5 text-secondary">You've fallen to the bottom. Gravity is working as intended.</p>
-  </footer>  
+  </footer>
+
+  <script>
+  </script>
 </body>
 </html>
