@@ -290,19 +290,6 @@ footer div::after {
   width: 30%;
 }
 
-footer::before {
-  content: "";
-  background-color: rgba(223, 182, 219, 0.551);
-  display: inline-block;
-  height: 8rem;
-  width: 16rem;
-  position: absolute;
-  z-index: -100;
-  top: 300%;
-  left: 30%;
-  animation: glow 2s infinite;
-}
-
 footer p::before,
 blockquote::before {
   content: '"';
