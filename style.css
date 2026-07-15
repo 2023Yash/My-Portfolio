@@ -53,7 +53,7 @@ header {
   #xl-links {
     display: none;
   }
-
+  
   #sm-links {
     display: inline;
   }
@@ -62,14 +62,84 @@ header {
 main::before {
   content: "";
   background-color: gold;
-  height: 14vmax;
+  height: 200px;
   aspect-ratio: 1;
   position: absolute;
   left: 15%;
-  top: 60%;
+  top: 50vh;
   border-radius: 50%;
   z-index: -101;
   animation: glow 3s infinite;
+}
+
+#blob {
+  background-color: white;
+  height: 22vmax;
+  aspect-ratio: 1/2;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to left, rgb(255, 146, 146), 80%, rgb(255, 121, 121));
+  animation: rotate 30s infinite;
+  opacity: 0.8;
+  animation: glow 3s infinite;
+  z-index: -100;
+}
+
+#about::before {
+  content: "";
+  background-color: orange;
+  display: inline-block;
+  width: 300px;
+  aspect-ratio: 5/2;
+  position: absolute;
+  z-index: -100;
+  top: 100vh;
+  left: 60%;
+  animation: glow 2s infinite;
+}
+
+#about::after {
+  content: "";
+  background-color: lightblue;
+  display: inline-block;
+  aspect-ratio: 22/7;
+  width: 250px;
+  position: absolute;
+  z-index: -100;
+  top: 200vh;
+  left: 30%;
+  animation: glow2 4s infinite;
+}
+
+#my-skills::after {
+  content: "";
+  background: red;
+  display: inline-block;
+  width: 150px;
+  aspect-ratio: 2/3;
+  position: absolute;
+  top: 135vh;
+  left: 40%;
+  z-index: -100;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: glow2 3s infinite;
+}
+
+#my-work::before {
+  content: "";
+  background-color: rgba(255, 157, 0, 0.4);
+  display: inline-block;
+  aspect-ratio: 1/2;
+  width: 200px;
+  position: absolute;
+  z-index: -100;
+  top: 179vh;
+  left: 70%;
+  animation: glow 2s infinite;
 }
 
 @keyframes rotate {
@@ -92,7 +162,7 @@ main::before {
   }
 
   50% {
-    filter: blur(80px);
+    filter: blur(90px);
   }
 
   to {
@@ -102,32 +172,16 @@ main::before {
 
 @keyframes glow2 {
   from {
-    filter: blur(200px);
-  }
-
-  50% {
     filter: blur(160px);
   }
 
-  to {
-    filter: blur(200px);
+  50% {
+    filter: blur(120px);
   }
-}
 
-#blob {
-  background-color: white;
-  height: 22vmax;
-  aspect-ratio: 1/2;
-  position: absolute;
-  left: 30%;
-  top: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background: linear-gradient(to left, rgb(255, 146, 146), 80%, rgb(255, 121, 121));
-  animation: rotate 30s infinite;
-  opacity: 0.8;
-  animation: glow 3s infinite;
-  z-index: -100;
+  to {
+    filter: blur(140px);
+  }
 }
 
 .follow::after {
@@ -170,32 +224,6 @@ main::before {
   100% {
     background-color: #ccc;
   }
-}
-
-#about::before {
-  content: "";
-  background-color: orange;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  z-index: -100;
-  top: 120%;
-  left: 60%;
-  animation: glow 2s infinite;
-}
-
-#about::after {
-  content: "";
-  background-color: lightblue;
-  display: inline-block;
-  height: 200px;
-  width: 30vw;
-  position: absolute;
-  z-index: -100;
-  top: 145%;
-  left: 30%;
-  animation: glow2 4s infinite;
 }
 
 #about h1 {
@@ -253,33 +281,6 @@ main::before {
   background: radial-gradient(rgba(255, 59, 59, 0.492), rgba(255, 99, 99, 0.515), rgba(255, 107, 107, 0.503));
 }
 
-#my-skills::after {
-  content: "";
-  background: red;
-  display: inline-block;
-  height: 200px;
-  width: 160PX;
-  position: absolute;
-  top: 220%;
-  left: 40%;
-  z-index: -100;
-  border-radius: 50%;
-  filter: blur(100px);
-  animation: glow2 3s infinite;
-}
-
-#my-work::before {
-  content: "";
-  background-color: rgba(255, 157, 0, 0.4);
-  display: inline-block;
-  height: 14rem;
-  width: 7rem;
-  position: absolute;
-  z-index: -100;
-  top: 250%;
-  left: 10%;
-  animation: glow 2s infinite;
-}
 
 footer div::before,
 footer div::after {
